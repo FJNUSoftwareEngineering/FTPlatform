@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+.bs-docs-sidenav.affix {
+	top: 40px;
+}
+
+/*  >表示第一个子元素  */
+.bs-docs-sidenav>li:first-child>a {
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+
+.bs-docs-sidenav>li>a {
+	display: block;
+	width: 190px \9;
+	margin: 0 0 -1px;
+	padding: 8px 14px;
+	border: 1px solid #e5e5e5;
+}
+
+.bs-docs-sidenav {
+	width: 170px;
+	margin: 0 0 0;
+	padding: 0;
+	background-color: #fff;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+}
+
+.bs-docs-sidenav .icon-chevron-right {
+	float: right;
+	margin-top: 2px;
+	margin-right: -6px;
+	opacity: .25;
+}
+
+.icon-chevron-right-first {
+	color: #ffffff;
+	background-color: #428bca;
+	border-color: #357ebd;
+	height: 30px;
+	text-align: left;
+	text-indent: 15px;
+	padding-top: 5px;
+}
+</style>
+<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+</head>
+<body>
+
+	<ul class="nav nav-list bs-docs-sidenav affix-top ">
+		<li class="active"><a href="home.html" target="rightFrame"><i
+				class="icon-chevron-right"></i>首页</a></li>
+		<li class="icon-chevron-right-first"><i
+			class="icon-chevron-right"></i> <img src="image/bar_image1.png">基金产品管理</li>
+
+		<li class=""><a href="newfund.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i> 新增基金类别</a></li>
+
+		<li class=""><a href="foudlist.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i>基金产品查询</a></li>
+
+		<li class="icon-chevron-right-first"><i
+			class="icon-chevron-right"></i> <img src="image/bar_image2.png">客户信息管理
+		</li>
+
+		<li class=""><a href="newclient.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i> 新客户开户</a></li>
+		<li class="active"><a href="clientslist.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i> 客户信息列表</a></li>
+		<li class="icon-chevron-right-first"><i
+			class="icon-chevron-right"></i> <img src="image/bar_image3.png">资金账户管理
+		</li>
+		<li class=""><a href="newfundaccount.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i> 新增资金账户</a></li>
+		<li class=""><a href="fundaccountsearch.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i> 资金账户查询</a></li>
+		<li class=""><a href="additionalaccounts.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i> 追加账户金额</a></li>
+		<li class=""><a href="removeaccounts.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i> 取出账户资金</a></li>
+		<li class="icon-chevron-right-first"><i
+			class="icon-chevron-right"></i> <img src="image/bar_image4.png">
+			资金产品交易</li>
+		<li class=""><a href="purchasefundlist.jsp" target="rightFrame"><i
+				class="icon-chevron-right"></i> 购买基金</a></li>
+		<li class=""><a href="backfund.jsp" target="rightFrame"><i class="icon-chevron-right"></i>
+				赎回基金</a></li>
+		<li class=""><a href="traderecordlist.jsp" target="rightFrame"><i class="icon-chevron-right"></i>
+				基金交易记录</a></li>
+		<li class=""><a href="holdings.jsp" target="rightFrame"><i class="icon-chevron-right"></i>
+				持仓情况</a></li>
+	</ul>
+
+	<script type="text/javascript">
+		$(function() {
+			$('.nav li').click(function(e) {
+				$('.nav li').removeClass('active');
+				//$(e.target).addClass('active');
+				$(this).addClass('active');
+			});
+		});
+	</script>
+
+</body>
+</html>

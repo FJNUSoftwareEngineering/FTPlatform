@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+body {
+background-color:white;
+}
+
+.container {
+	height: 350px;
+	width: auto;
+}
+
+.form-signin {
+	margin: 0px auto;
+	width:400px;
+	padding-top:1%;
+	padding-left:5%;
+	padding-bottom:2%;
+	margin-left: 800px;
+	margin-top: 150px;
+	margin-bottom: 30px;
+
+}
+
+.form-control-signin {
+	height: 45px;
+	width: 80%;
+}
+
+.btn-signin {
+	width: 80%;
+}
+
+.checkbox-signin {
+}
+
+.form-signin-heading-signin {
+}
+
+.row-fluid-signin
+{
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.row-fluid-signin-second{
+	margin-left: 0px;
+	margin-right: 50px;
+}
+
+.image{
+	 width: 300px; 
+	 height: 211px;
+	 margin-left: 30px;
+}

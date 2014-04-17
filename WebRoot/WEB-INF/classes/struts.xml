@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="accountMgr" extends="struts-default">
+		<action name="login_result" class="com.ftplatform.action.LoginAction"
+			method="login">
+			<result name="success">/title.html</result>
+		</action>
+	</package>
+	<package name="clientMgr" extends="struts-default">
+		<action name="add_result" class="com.ftplatform.action.ClientInfoAction"
+			method="addclient">
+		</action>
+	</package>
+	<package name="FundMgr" extends="struts-default">
+		<action name="add_fund_result" class="com.ftplatform.action.FundAction"
+			method="addfund">
+		</action>
+	</package>
+	<package name="FinancialAccountMgr" extends="struts-default">
+		<action name="add_financialaccount_result" class="com.ftplatform.action.FinancialAccountAction"
+			method="addfinancialaccount">
+		</action>
+		<action name="add_financialamount_result" class="com.ftplatform.action.FinancialAccountAction"
+			method="addfinancialamount">
+		</action>
+		<action name="deduct_financialamount_result" class="com.ftplatform.action.FinancialAccountAction"
+			method="deductfinancialamount">
+		</action>
+	</package>
+</struts>    
