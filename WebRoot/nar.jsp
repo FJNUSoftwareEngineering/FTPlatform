@@ -82,8 +82,8 @@
 
 		<li class=""><a href="newfund.jsp" target="rightFrame"><i
 				class="icon-chevron-right"></i> 新增基金类别</a></li>
-		<li class=""><s:a hraf="FundAction!loadFunds.action" target="rightFrame"><i
-				class="icon-chevron-right"></i>基金产品查询</s:a></li>
+		<li class=""><a href="<s:url action="load_funds"/>" target="rightFrame"><i
+				class="icon-chevron-right"></i>基金产品查询</a></li>
 		<li class="icon-chevron-right-first"><i
 			class="icon-chevron-right"></i> <img src="image/bar_image2.png">客户信息管理
 		</li>

@@ -19,6 +19,7 @@
 	<package name="FundMgr" extends="struts-default">
 		<action name="add_fund_result" class="com.ftplatform.action.FundAction"
 			method="addfund">
+			<result name="success">foudlist.jsp</result>
 		</action>
 	    <action name="load_funds" class="com.ftplatform.action.FundAction" method="loadFunds">
          <result name="list">foudlist.jsp</result>

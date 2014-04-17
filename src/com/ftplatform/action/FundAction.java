@@ -94,7 +94,7 @@ public class FundAction extends ActionSupport {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Timestamp createdate = Timestamp.valueOf(sdf.format(dt));
 		created_date = createdate;	
-		fund.setFundNo(1000+fundService.total());
+		fund.setFundNo(100000+fundService.total());
 		fund.setFundName(fund_name);
 		fund.setPrice(Double.valueOf(fundprice));
 		fund.setDescription(description);
@@ -102,7 +102,7 @@ public class FundAction extends ActionSupport {
 		fund.setCreatedDate(created_date);
 		
 		fundService.createFund(fund);
-		return null;
+		return SUCCESS;
 
 	}
 	

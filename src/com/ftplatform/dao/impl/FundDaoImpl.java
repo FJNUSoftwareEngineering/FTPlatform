@@ -41,9 +41,9 @@ public class FundDaoImpl implements FundDao {
 	public List<Fund> loadFund() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery("select * from Fund");
-		session.flush();
-		List<Fund> fund_list= (List<Fund>)query.uniqueResult();
+		Query query = session.createQuery("from Fund a");
+
+		List<Fund> fund_list= query.list();
 		session.close();
 		return fund_list;
 	}
