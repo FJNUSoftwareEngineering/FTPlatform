@@ -21,7 +21,11 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
 </head>
-
+<script type="text/javascript">   
+      function updateFund(fundNo){
+         location.href='<s:url action="load_a_fund"/>?fund.fundNo='+fundNo;
+       }
+ </script>
 <body>
 	<hr style="margin-top: 0px;">
 	<div class="clearfix">
@@ -37,7 +41,8 @@
 	</div>
 	<hr style="margin-top: 10px;">
 	<div class="table-responsive">
-		<table class="table" id="fundlisttable" cellpadding="0" cellspacing="0">
+		<table class="table" id="fundlisttable" cellpadding="0"
+			cellspacing="0">
 			<thead>
 				<tr>
 					<th>基金编号</th>
@@ -49,16 +54,23 @@
 				</tr>
 			</thead>
 			<tbody>
-			  <s:iterator value="fundlist">
-				<tr class="active">
-					<td style="font-size: 5px"><s:property value="fundNo"/></td>
-					<td style="font-size: 5px"><s:property value="fundName"/></td>
-					<td style="font-size: 5px"><s:property value="price"/></td>
-					<td style="font-size: 5px"><s:property value="description"/></td>
-					<td style="font-size: 5px"><s:property value="createdDate" /></td>
-					<td><a style="font-size: 5px" href="alterfund.jsp">修改</a>
-					</td>
-				</tr>
+				<s:iterator value="fundlist">
+					<tr class="active">
+
+						<td style="font-size: 5px"><s:property value="fundNo" />
+						</td>
+						<td style="font-size: 5px"><s:property value="fundName" />
+						</td>
+						<td style="font-size: 5px"><s:property value="price" />
+						</td>
+						<td style="font-size: 5px"><s:property value="description" />
+						</td>
+						<td style="font-size: 5px"><s:property value="createdDate" />
+						</td>
+						<td><a style="font-size: 5px"
+							onclick="updateFund(<s:property value="fundNo"/>);">修改</a></td>
+
+					</tr>
 				</s:iterator>
 
 			</tbody>

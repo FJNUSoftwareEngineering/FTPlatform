@@ -21,9 +21,18 @@
 			method="addfund">
 			<result name="success" type="redirectAction">load_funds</result>
 		</action>
-	    <action name="load_funds" class="com.ftplatform.action.FundAction" method="loadFunds">
-         <result name="list">fundlist.jsp</result>
-       </action>
+		<action name="load_funds" class="com.ftplatform.action.FundAction"
+			method="loadFunds">
+			<result name="list">fundlist.jsp</result>
+		</action>
+		<action name="load_a_fund" class="com.ftplatform.action.FundAction"
+			method="loadAFund">
+			<result name="alterfund">alterfund.jsp</result>
+		</action>
+		<action name="alter_fund_result" class="com.ftplatform.action.FundAction"
+			method="updateFund">
+			<result name="success" type="redirectAction">load_funds</result>
+		</action>
 	</package>
 	<package name="FinancialAccountMgr" extends="struts-default">
 		<action name="add_financialaccount_result" class="com.ftplatform.action.FinancialAccountAction"

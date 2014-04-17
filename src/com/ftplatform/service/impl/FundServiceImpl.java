@@ -36,5 +36,16 @@ public class FundServiceImpl implements FundService {
 		// TODO Auto-generated method stub
 		return fundDao.loadFund();
 	}
+	@Override
+	public Fund findFundByNo(Integer fund_no) {
+		// TODO Auto-generated method stub
+		return fundDao.findFundByNo(fund_no);
+	}
+
+	@Override
+	public void update(Fund fund) {
+		// TODO Auto-generated method stub
+		fundDao.update(fund);
+	}
 
 }

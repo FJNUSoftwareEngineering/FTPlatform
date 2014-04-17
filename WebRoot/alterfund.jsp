@@ -31,71 +31,69 @@
 
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="jumbotron">
-			<form action="add_result">
+			<s:form action="alter_fund_result">
 				<div class="clearfix">
-					<div class="clientcard" style="width: 40%; float: left;">
+					<div class="fundNo" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">基金编号:</h3>
 					</div>
-					<div class="clientcard" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top" readOnly="true"
-							style="width: 80%" name="id_card_no" value="1" required>
+					<div class="fundNo" style="width: 40%;float: left">
+						<s:textfield Class="form-control right top" style="width: 80%"
+							readonly="true" name="fund.fundNo"></s:textfield>
 					</div>
 				</div>
 				<div class="clearfix">
-					<div class="clientcard" style="width: 40%; float: left;">
+					<div class="fundName" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">基金产品名称:</h3>
 					</div>
-					<div class="clientcard" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top"
-							style="width: 80%" name="id_card_no" value="证券投资基金" required>
+					<div class="fundName" style="width: 40%;float: left;">
+						<s:textfield Class="form-control right top" style="width: 80%"
+							name="fund.fundName"></s:textfield>
+
 					</div>
 				</div>
 				<div class="clearfix">
-					<div class="clientname" style="width: 40%; float: left;">
+					<div class="price" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">产品价格:</h3>
 					</div>
-					<div class="clientname" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top"
-							style="width: 80%" name="client_name" value="100" required>
+					<div class="price" style="width: 40%;float: left;">
+						<s:textfield Class="form-control right top" style="width: 80%"
+							name="fund.price"></s:textfield>
 					</div>
 
 				</div>
 
 				<div class="clearfix">
-					<div class="clientadress" style="width: 40%; float: left;">
+					<div class="description" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">描述:</h3>
 					</div>
-					<div class="clientadress" style="width: 40%;float: left;">
-						<textarea class="form-control right top"
-							style="width: 80%;height: 100px" name="address" required>一种利益共存、风险共担的集合证券投资方式，即通过发行基金份额。</textarea>
+					<div class="description" style="width: 40%;float: left;">
+						<s:textarea Class="form-control right top"
+							style="width: 80%;height: 100px" name="fund.description"></s:textarea>
 					</div>
-
 				</div>
 				<div class="clearfix">
-					<div class="clientname" style="width: 40%; float: left;">
+					<div class="status" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">状态:</h3>
 					</div>
-					<div class="clientname" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top"
-							style="width: 80%" name="client_name" value="可交易" required>
+					<div class="status" style="width: 40%;float: left;">
+						<s:textfield Class="form-control right top" style="width: 80%"
+							name="fund.status"></s:textfield>
 					</div>
-
 				</div>
-						<div class="clearfix">
-					<div class="clientname" style="width: 40%; float: left;">
+				<div class="clearfix">
+					<div class="createtime" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">创建时间:</h3>
 					</div>
-					<div class="clientname" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top" readOnly="true"
-							style="width: 80%" name="client_name" value="2014-04-14 21:57:00" required>
+					<div class="createtime" style="width: 40%;float: left;">
+						<s:textfield Class="form-control right top" style="width: 80%"
+							name="fund.createdDate"></s:textfield>
 					</div>
-
 				</div>
 				<button class="btn btn-mid btn-primary top-max "
 					style="margin-left: 327px" type="submit">保存</button>
 				<a class="btn btn-mid btn-success top-max" href="" role="button">取消
 				</a>
-			</form>
+			</s:form>
 		</div>
 	</div>
 

@@ -2,6 +2,7 @@ package com.ftplatform.service.impl;
 
 import com.ftplatform.dao.FinancialAccountDao;
 import com.ftplatform.domain.FinancialAccount;
+import com.ftplatform.domain.Fund;
 import com.ftplatform.service.FinancialAccountService;
 
 public class FinancialAccountServiceImpl implements FinancialAccountService {
@@ -40,5 +41,6 @@ public class FinancialAccountServiceImpl implements FinancialAccountService {
 		return financialAccountDao.findFinancialAccountByNo(acc_no);
 
 	}
+
 
 }
