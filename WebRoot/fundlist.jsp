@@ -55,7 +55,7 @@
 					<td style="font-size: 5px"><s:property value="fundName"/></td>
 					<td style="font-size: 5px"><s:property value="price"/></td>
 					<td style="font-size: 5px"><s:property value="description"/></td>
-					<td style="font-size: 5px"><s:property value="createdDate"/></td>
+					<td style="font-size: 5px"><s:property value="createdDate" /></td>
 					<td><a style="font-size: 5px" href="alterfund.jsp">修改</a>
 					</td>
 				</tr>

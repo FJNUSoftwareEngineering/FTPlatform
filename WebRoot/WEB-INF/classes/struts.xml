@@ -19,10 +19,10 @@
 	<package name="FundMgr" extends="struts-default">
 		<action name="add_fund_result" class="com.ftplatform.action.FundAction"
 			method="addfund">
-			<result name="success">foudlist.jsp</result>
+			<result name="success" type="redirectAction">load_funds</result>
 		</action>
 	    <action name="load_funds" class="com.ftplatform.action.FundAction" method="loadFunds">
-         <result name="list">foudlist.jsp</result>
+         <result name="list">fundlist.jsp</result>
        </action>
 	</package>
 	<package name="FinancialAccountMgr" extends="struts-default">

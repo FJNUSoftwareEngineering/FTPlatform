@@ -67,6 +67,9 @@
 			</list>
 		</property>
 	</bean>
+	
+	
+	
 	<bean id="AccountDao" class="com.ftplatform.dao.impl.AccountDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>

@@ -108,6 +108,11 @@ public class FundAction extends ActionSupport {
 	
 	public String loadFunds() throws Exception {
 		fundlist=fundService.loadFund();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		for(int i=0;i<fundlist.size();i++)
+		{
+			fundlist.get(i).setCreatedDate(java.sql.Date.valueOf(sdf.format(fundlist.get(i).getCreatedDate())));
+		}
 		return "list";
 	}
 }
