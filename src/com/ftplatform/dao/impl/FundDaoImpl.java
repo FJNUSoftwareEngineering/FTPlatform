@@ -1,5 +1,7 @@
 package com.ftplatform.dao.impl;
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -33,6 +35,17 @@ public class FundDaoImpl implements FundDao {
 		session.close();
 		return count;
 
+	}
+
+	@Override
+	public List<Fund> loadFund() {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("select * from Fund");
+		session.flush();
+		List<Fund> fund_list= (List<Fund>)query.uniqueResult();
+		session.close();
+		return fund_list;
 	}
 
 }

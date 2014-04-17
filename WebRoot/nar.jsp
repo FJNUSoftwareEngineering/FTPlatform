@@ -1,9 +1,23 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="image/favicon.ico">
 
+<title>开发基金平台</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/signin.css" rel="stylesheet">
+</head>
 <link href="css/bootstrap.css" rel="stylesheet">
 <style type="text/css">
 .bs-docs-sidenav.affix {
@@ -68,7 +82,7 @@
 
 		<li class=""><a href="newfund.jsp" target="rightFrame"><i
 				class="icon-chevron-right"></i> 新增基金类别</a></li>
-		<li class=""><s:a hraf="userAction!addUser.action" target="rightFrame"><i
+		<li class=""><s:a hraf="FundAction!loadFunds.action" target="rightFrame"><i
 				class="icon-chevron-right"></i>基金产品查询</s:a></li>
 		<li class="icon-chevron-right-first"><i
 			class="icon-chevron-right"></i> <img src="image/bar_image2.png">客户信息管理

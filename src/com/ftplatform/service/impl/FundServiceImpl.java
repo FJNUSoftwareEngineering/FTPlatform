@@ -1,5 +1,7 @@
 package com.ftplatform.service.impl;
 
+import java.util.List;
+
 import com.ftplatform.dao.FundDao;
 import com.ftplatform.domain.Fund;
 import com.ftplatform.service.FundService;
@@ -27,6 +29,12 @@ public class FundServiceImpl implements FundService {
 		// TODO Auto-generated method stub
 
 		return fundDao.total();
+	}
+
+	@Override
+	public List<Fund> loadFund() {
+		// TODO Auto-generated method stub
+		return fundDao.loadFund();
 	}
 
 }

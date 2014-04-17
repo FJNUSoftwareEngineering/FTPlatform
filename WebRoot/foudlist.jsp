@@ -37,10 +37,9 @@
 	</div>
 	<hr style="margin-top: 10px;">
 	<div class="table-responsive">
-		<table class="table">
+		<table class="table" id="fundlisttable" cellpadding="0" cellspacing="0">
 			<thead>
 				<tr>
-					<th>#</th>
 					<th>基金编号</th>
 					<th>产品名称</th>
 					<th>基金价格</th>
@@ -50,46 +49,17 @@
 				</tr>
 			</thead>
 			<tbody>
+			  <s:iterator value="fundlist">
 				<tr class="active">
-					<td style="font-size: 5px">1</td>
-					<td style="font-size: 5px">1000</td>
-					<td style="font-size: 5px">嘉实多利分级债券证券投资基金</td>
-					<td style="font-size: 5px">100.00</td>
-					<td style="font-size: 5px">在控制基金组合下行波动幅度和保持适当流动性,追求收益最大化。</td>
-					<td style="font-size: 5px">2014-04-15</td>
+					<td style="font-size: 5px"><s:property value="fundNo"/></td>
+					<td style="font-size: 5px"><s:property value="fundName"/></td>
+					<td style="font-size: 5px"><s:property value="price"/></td>
+					<td style="font-size: 5px"><s:property value="description"/></td>
+					<td style="font-size: 5px"><s:property value="createdDate"/></td>
 					<td><a style="font-size: 5px" href="alterfund.jsp">修改</a>
 					</td>
 				</tr>
-				<tr class="success">
-					<td style="font-size: 5px">2</td>
-					<td style="font-size: 5px">1001</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">100</td>
-					<td style="font-size: 5px">一种利益共存、风险共担的集合证券投资方式，即通过发行基金份额。</td>
-					<td style="font-size: 5px">2014-4-14 20:51:50</td>
-					<td><a style="font-size: 5px" href="newfund.jsp">修改</a>
-					</td>
-				</tr>
-				<tr class="warning">
-					<td style="font-size: 5px">3</td>
-					<td style="font-size: 5px">1001</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">100</td>
-					<td style="font-size: 5px">一种利益共存、风险共担的集合证券投资方式，即通过发行基金份额。</td>
-					<td style="font-size: 5px">2014-4-14 20:51:50</td>
-					<td><a style="font-size: 5px" href="newfund.jsp">修改</a>
-					</td>
-				</tr>
-				<tr class="danger">
-					<td style="font-size: 5px">4</td>
-					<td style="font-size: 5px">1001</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">100</td>
-					<td style="font-size: 5px">一种利益共存、风险共担的集合证券投资方式，即通过发行基金份额。</td>
-					<td style="font-size: 5px">2014-4-14 20:51:50</td>
-					<td><a style="font-size: 5px" href="newfund.jsp">修改</a>
-					</td>
-				</tr>
+				</s:iterator>
 
 			</tbody>
 		</table>

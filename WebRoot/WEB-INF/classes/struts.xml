@@ -20,6 +20,9 @@
 		<action name="add_fund_result" class="com.ftplatform.action.FundAction"
 			method="addfund">
 		</action>
+	    <action name="load_funds" class="com.ftplatform.action.FundAction" method="loadFunds">
+         <result name="list">foudlist.jsp</result>
+       </action>
 	</package>
 	<package name="FinancialAccountMgr" extends="struts-default">
 		<action name="add_financialaccount_result" class="com.ftplatform.action.FinancialAccountAction"

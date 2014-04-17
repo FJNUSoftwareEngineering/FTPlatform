@@ -37,51 +37,28 @@
 	</div>
 	<hr style="margin-top: 10px;">
 	<div class="table-responsive">
-		<table class="table">
+		<table class="table"  id="fundtable" cellpadding="0" cellspacing="0">
 			<thead>
 				<tr>
-					<th>#</th>
 					<th>基金编号</th>
 					<th>产品名称</th>
 					<th>基金价格</th>
 					<th></th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr class="active">
-					<td style="font-size: 5px">1</td>
-					<td style="font-size: 5px">1000</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">100</td>
-					<td><a style="font-size: 5px" href="purchasefund.jsp">购买</a>
-					</td>
-				</tr>
-				<tr class="success">
-					<td style="font-size: 5px">2</td>
-					<td style="font-size: 5px">1001</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">100</td>
-					<td><a style="font-size: 5px" href="purchasefund.jsp">购买</a>
-					</td>
-				</tr>
-				<tr class="warning">
-					<td style="font-size: 5px">3</td>
-					<td style="font-size: 5px">1001</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">100</td>
-					<td><a style="font-size: 5px" href="purchasefund.jsp">购买</a>
-					</td>
-				</tr>
-				<tr class="danger">
-					<td style="font-size: 5px">4</td>
-					<td style="font-size: 5px">1001</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">100</td>
-					<td><a style="font-size: 5px" href="purchasefund.jsp">购买</a>
-					</td>
-				</tr>
 
+			<tbody>
+			<s:iterator value="funds">
+				<tr class="active">
+					<td style="font-size: 5px"><s:property value="fundNo"/></td>
+					<td style="font-size: 5px"><s:property value="fundName"/></td>
+					<td style="font-size: 5px"><s:property value="price"/></td>
+					<td><a style="font-size: 5px" href="purchasefund.jsp">购买</a>
+					</td>
+				</tr>				
+		     </s:iterator>
 			</tbody>
+	
 		</table>
 	</div>
 </body>

@@ -3,12 +3,12 @@ package com.ftplatform.action;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import com.ftplatform.domain.Fund;
 import com.ftplatform.service.FundService;
 import com.ftplatform.service.impl.FundServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
-
 public class FundAction extends ActionSupport {
 
 	private Integer fund_no;
@@ -18,7 +18,7 @@ public class FundAction extends ActionSupport {
 	private String status;
 	private Timestamp created_date;
 	private FundService fundService;
-
+    private List<Fund> fundlist;
 	public Integer getFund_no() {
 		return fund_no;
 	}
@@ -69,6 +69,14 @@ public class FundAction extends ActionSupport {
 
 
 
+	public List<Fund> getFundlist() {
+		return fundlist;
+	}
+
+	public void setFundlist(List<Fund> fundlist) {
+		this.fundlist = fundlist;
+	}
+
 	public FundService getFundService() {
 		return fundService;
 	}
@@ -96,5 +104,10 @@ public class FundAction extends ActionSupport {
 		fundService.createFund(fund);
 		return null;
 
+	}
+	
+	public String loadFunds() throws Exception {
+		fundlist=fundService.loadFund();
+		return "list";
 	}
 }
