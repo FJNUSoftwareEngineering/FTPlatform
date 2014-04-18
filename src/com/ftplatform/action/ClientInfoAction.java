@@ -22,7 +22,9 @@ public class ClientInfoAction extends ActionSupport {
 	private String hobby;
 	private Timestamp created_date;
 	private ClientService clientService;
-    private List<ClientInfo> list_clients;
+	private List<ClientInfo> list_clients;
+	private Client client;
+
 	public String getId_card_no() {
 		return id_card_no;
 	}
@@ -87,14 +89,20 @@ public class ClientInfoAction extends ActionSupport {
 		this.created_date = created_date;
 	}
 
-
-
 	public List<ClientInfo> getList_clients() {
 		return list_clients;
 	}
 
 	public void setList_clients(List<ClientInfo> list_clients) {
 		this.list_clients = list_clients;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public ClientService getClientService() {
@@ -119,6 +127,7 @@ public class ClientInfoAction extends ActionSupport {
 		client.setSex(sex);
 		client.setAddress(address);
 		client.setEmail(email);
+		client.setHobby(hobby);
 		Date dt = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Timestamp createdate = Timestamp.valueOf(sdf.format(dt));
@@ -127,9 +136,19 @@ public class ClientInfoAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	public String  loadclients() throws Exception {
-		
-		list_clients=clientService.loadall();
+	public String loadclients() throws Exception {
+
+		list_clients = clientService.loadall();
 		return "list_client";
+	}
+
+	public String loadAClient() throws Exception {
+		client = clientService.getClientByNo(client.getIdCardNo());
+		return "alterclient";
+
+	}
+	public String updateClient() throws Exception{
+		clientService.update(client);
+		return SUCCESS;
 	}
 }

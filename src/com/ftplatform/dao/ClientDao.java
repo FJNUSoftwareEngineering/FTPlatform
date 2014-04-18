@@ -8,7 +8,7 @@ import com.ftplatform.domain.ClientInfo;
 public interface ClientDao {
 
     void add(Client client);
-	Client getClientByNo(Integer clientNo);
+	Client getClientByNo(String idCardNo);
     void update(Client client);
 	List<ClientInfo> loadall();
 }

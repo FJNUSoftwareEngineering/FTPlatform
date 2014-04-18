@@ -27,9 +27,9 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public Client getClientByNo(Integer clientNo) {
+	public Client getClientByNo(String idCardNo) {
 		// TODO Auto-generated method stub
-		return clientDao.getClientByNo(clientNo);
+		return clientDao.getClientByNo(idCardNo);
 	}
 
 	@Override

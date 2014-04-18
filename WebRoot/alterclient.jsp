@@ -31,15 +31,14 @@
 
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="jumbotron">
-			<form action="add_result">
+			<s:form action="alter_client_result">
 				<div class="clearfix">
 					<div class="clientcard" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">身份证号码:</h3>
 					</div>
 					<div class="clientcard" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top" readonly="ture"
-							style="width: 80%" name="id_card_no" placeholder="Type id-card"
-							required>
+						<s:textfield Class="form-control right top" style="width: 80%"
+							readonly="true" name="client.idCardNo"></s:textfield>
 					</div>
 				</div>
 				<div class="clearfix">
@@ -47,9 +46,8 @@
 						<h3 class="right small clearfix">姓名:</h3>
 					</div>
 					<div class="clientname" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top"
-							style="width: 80%" name="client_name" placeholder="Type name"
-							required>
+						<s:textfield Class="form-control right top" style="width: 80%"
+							name="client.clientName"></s:textfield>
 					</div>
 
 				</div>
@@ -59,30 +57,18 @@
 					</div>
 					<div class="clientsex" style="width: 40%;float: left;">
 						<!-- /btn-group -->
-						<div class="btn-group top right ">
-							<button class=" btn btn-primary dropdown-toggle"
-								data-toggle="dropdown" id="selectsex">
-								男<span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu " style="position: relative;">
-								<li><a onclick=SelectMan()>男</a></li>
-								<li class="divider"></li>
-								<li><a onclick=SelectWoman()>女</a></li>
-							</ul>
-							<input type="text" style="display:none;" name="sex" id="sex" value="M" required>
+						<div class="top right " style="font-size: 15px;font-style: normal;">
+                            <s:radio name="client.sex"  list="#{'M':'&nbsp;&nbsp;&nbsp;男&nbsp;&nbsp;&nbsp; ','W':'&nbsp;&nbsp;&nbsp;女&nbsp;&nbsp;&nbsp;'}"></s:radio>			
 						</div>
 					</div>
-
 				</div>
 				<div class="clearfix">
 					<div class="clientphone" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">联系方式:</h3>
 					</div>
 					<div class="clientphone" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top"
-							style="width: 80%" name="phone" placeholder="Type phone number"
-							required>
+						<s:textfield Class="form-control right top" style="width: 80%"
+							name="client.phone"></s:textfield>
 					</div>
 
 				</div>
@@ -91,8 +77,8 @@
 						<h3 class="right small clearfix">地址:</h3>
 					</div>
 					<div class="clientadress" style="width: 40%;float: left;">
-						<textarea class="form-control right top" style="width: 80%"
-							name="address" placeholder="Type address" required></textarea>
+						<s:textarea Class="form-control right top"
+							style="width: 80%;height: 60px" name="client.address"></s:textarea>
 					</div>
 
 				</div>
@@ -101,29 +87,33 @@
 						<h3 class="right small clearfix">邮箱:</h3>
 					</div>
 					<div class="clientemail" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top"
-							style="width: 80%" name="email" placeholder="Type email" required>
+						<s:textfield Class="form-control right top" style="width: 80%"
+							name="client.email"></s:textfield>
 					</div>
 
 				</div>
+				<div class="clearfix">
+					<div class="clienthobby" style="width: 40%; float: left;">
+						<h3 class="right small clearfix">爱好:</h3>
+					</div>
+					<div class="clientadress" style="width: 40%;float: left;">
+						<s:textarea Class="form-control right top"
+							style="width: 80%;height: 60px" name="client.hobby"></s:textarea>
+					</div>
+
+				</div>
+				<div class="clientadress" style="width: 40%;float: left;">
+						<s:textarea Class="form-control right top"
+							style="display:none;width: 80%;height: 60px" name="client.createdDate" ></s:textarea>
+					</div>
 				<button class="btn btn-mid btn-primary top-max "
 					style="margin-left: 327px" type="submit">修改</button>
 				<a class="btn btn-mid btn-success top-max" href="" role="button">取消
 				</a>
-			</form>
+			</s:form>
 		</div>
 	</div>
 
 </body>
-<script language="JavaScript">
-	function SelectMan() {
-		selectsex.innerHTML = "男<span class=\"caret\"></span>";
-		sex.value="M";
-	}
-	function SelectWoman() {
-		selectsex.innerHTML = "女<span class=\"caret\"></span>";
-		sex.value="W";
-	}
-</script>
-</html>
+
 </html>

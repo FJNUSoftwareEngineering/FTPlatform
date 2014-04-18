@@ -59,18 +59,8 @@
 					</div>
 					<div class="clientsex" style="width: 40%;float: left;">
 						<!-- /btn-group -->
-						<div class="btn-group top right ">
-							<button class=" btn btn-primary dropdown-toggle"
-								data-toggle="dropdown" id="selectsex">
-								男<span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu " style="position: relative;">
-								<li><a onclick=SelectMan()>男</a></li>
-								<li class="divider"></li>
-								<li><a onclick=SelectWoman()>女</a></li>
-							</ul>
-							<input type="text" style="display:none;" name="sex" id="sex" value="M" required>
+						<div class="top right ">
+							  <s:radio name="sex"  list="#{'M':'&nbsp;&nbsp;&nbsp;男&nbsp;&nbsp;&nbsp; ','W':'&nbsp;&nbsp;&nbsp;女&nbsp;&nbsp;&nbsp;'}"></s:radio>
 						</div>
 					</div>
 
@@ -103,6 +93,16 @@
 					<div class="clientemail" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
 							style="width: 80%" name="email" placeholder="Type email" required>
+					</div>
+
+				</div>
+				<div class="clearfix">
+					<div class="clienthobby" style="width: 40%; float: left;">
+						<h3 class="right small clearfix">爱好:</h3>
+					</div>
+					<div class="clienthobby" style="width: 40%;float: left;">
+						<textarea class="form-control right top" style="width: 80%"
+							name="hobby" placeholder="Type hobby" required></textarea>
 					</div>
 
 				</div>

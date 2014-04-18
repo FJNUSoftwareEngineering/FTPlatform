@@ -20,7 +20,7 @@ public class FundAction extends ActionSupport {
 	private Date created_date;
 	private FundService fundService;
 	private List<Fund> fundlist;
-	private Fund fund=null;
+	private Fund fund = null;
 
 	public Integer getFund_no() {
 		return fund_no;
@@ -101,10 +101,6 @@ public class FundAction extends ActionSupport {
 	public String addfund() throws Exception {
 		Fund fund = new Fund();
 		status = "Y";
-		// Date dt = new Date();
-		// SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		// Timestamp createdate = Timestamp.valueOf(sdf.format(dt));
-		// created_date = createdate;
 		fund.setFundNo(100000 + fundService.total());
 		fund.setFundName(fund_name);
 		fund.setPrice(Double.valueOf(fundprice));
@@ -139,13 +135,11 @@ public class FundAction extends ActionSupport {
 				.getCreatedDate())));
 		return "alterfund";
 	}
-	public String updateFund() throws Exception 
-	{
-		if(fund.getStatus().equals("可交易"))
-		{
+
+	public String updateFund() throws Exception {
+		if (fund.getStatus().equals("可交易")) {
 			fund.setStatus("Y");
-		}
-		else{
+		} else {
 			fund.setStatus("N");
 		}
 		fundService.update(fund);

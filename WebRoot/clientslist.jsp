@@ -21,7 +21,11 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
 </head>
-
+<script type="text/javascript">   
+      function updateClient(idCardNo){
+         location.href='<s:url action="load_a_client"/>?client.idCardNo='+idCardNo;
+       }
+ </script>
 <body>
 	<hr style="margin-top: 0px;">
 	<div class="clearfix">
@@ -51,7 +55,7 @@
 			</thead>
 			<tbody>
 				<s:iterator value="list_clients">
-					<tr class="success">
+					<tr class="active">
 						<td style="font-size: 5px"><s:property value="idCardNo" /></td>
 						<td style="font-size: 5px" ><s:property value="clientName" />
 						</td>
@@ -59,7 +63,8 @@
 						</td>
 						<td style="font-size: 5px;" ><s:property value="accTotalAmount"/>
 						</td>
-						<td ><a style="font-size: 5px" href="alterclient.jsp" >修改基本信息</a>
+						<td ><a style="font-size: 5px; cursor:pointer" 
+							onclick="updateClient(<s:property value="idCardNo"/>);">修改基本信息</a>
 						</td>
 						<td ><a style="font-size: 5px" href="clientdetail.jsp">查看详细信息</a>
 						</td>

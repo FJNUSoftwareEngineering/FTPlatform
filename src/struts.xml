@@ -20,6 +20,14 @@
 			method="loadclients">
 			<result name="list_client">clientslist.jsp</result>
 		</action>
+		<action name="load_a_client" class="com.ftplatform.action.ClientInfoAction"
+			method="loadAClient">
+			<result name="alterclient">alterclient.jsp</result>
+		</action>
+		<action name="alter_client_result" class="com.ftplatform.action.ClientInfoAction"
+			method="updateClient">
+			<result name="success" type="redirectAction">load_clients</result>
+		</action>
 	</package>
 	<package name="FundMgr" extends="struts-default">
 		<action name="add_fund_result" class="com.ftplatform.action.FundAction"

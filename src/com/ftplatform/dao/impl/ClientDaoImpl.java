@@ -32,12 +32,11 @@ public class ClientDaoImpl implements ClientDao {
 	}
 
 	@Override
-	public Client getClientByNo(Integer clientNo) {
+	public Client getClientByNo(String idCardNo) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		Query query = session
-				.createQuery("from Client a where a.ID_CARD_NO='123'");
-
+				.createQuery("from Client a where a.idCardNo="+idCardNo+"");
 		List<Client> list = query.list();
 		session.close();
 		return list.get(0);
@@ -48,6 +47,7 @@ public class ClientDaoImpl implements ClientDao {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		session.update(client);
+		session.flush();
 		session.close();
 	}
 
