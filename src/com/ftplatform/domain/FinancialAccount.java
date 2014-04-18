@@ -16,8 +16,8 @@ public class FinancialAccount extends AbstractFinancialAccount implements
 
 	/** full constructor */
 	public FinancialAccount(String accPwd, Double accAmount, String accStatus,
-			String idcardNo, Timestamp createDate) {
-		super(accPwd, accAmount, accStatus, idcardNo, createDate);
+			String idcardNo, Timestamp createDate,Double accTotalAmount) {
+		super(accPwd, accAmount, accStatus, idcardNo, createDate,accTotalAmount);
 	}
 
 }

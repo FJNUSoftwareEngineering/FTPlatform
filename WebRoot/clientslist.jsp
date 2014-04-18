@@ -37,55 +37,34 @@
 	</div>
 	<hr style="margin-top: 10px;">
 	<div class="table-responsive">
-		<table class="table">
+		<table class="table" id="clientlisttable" cellpadding="0"
+			cellspacing="0">
 			<thead>
 				<tr>
-					<th>#</th>
-					<th>客户编号</th>
-					<th>姓名</th>
-					<th>可用资产</th>
-					<th>总资产</th>
-					<th></th>
-					<th></th>
+					<th style="font-size: 15px" align="left">客户编号</th>
+					<th style="font-size: 15px" align="center">姓名</th>
+					<th style="font-size: 15px" align="right" >可用资产</th>
+					<th style="font-size: 15px" align="right">总资产</th>
+					<th style="font-size: 15px" align="center" ></th>
+					<th style="font-size: 15px" align="center"></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="active">
-					<td>1</td>
-					<td>435234353</td>
-					<td>陈先生</td>
-					<td>1000.00</td>
-					<td>2000.00</td>
-					<td><a style="font-size: 5px" href="alterclient.jsp">修改基本信息</a></td>
-					<td><a style="font-size: 5px" href="clientdetail.jsp">查看详细信息</a></td>
-				</tr>
-				<tr class="success">
-				    <td>2</td>
-					<td>435234353</td>
-					<td>陈先生</td>
-					<td>1000.00</td>
-					<td>2000.00</td>
-					<td><a style="font-size: 5px" href="alterclient.jsp">修改基本信息</a></td>
-					<td><a style="font-size: 5px" href="clientdetail.jsp">查看详细信息</a></td>
-				</tr>
-				<tr class="warning">
-					<td>3</td>
-					<td>435234353</td>
-					<td>陈先生</td>
-					<td>1000.00</td>
-					<td>2000.00</td>
-					<td><a style="font-size: 5px" href="alterclient.jsp">修改基本信息</a></td>
-					<td><a style="font-size: 5px" href="clientdetail.jsp">查看详细信息</a></td>
-				</tr>
-				<tr class="danger">
-					    <td>4</td>
-					<td>435234353</td>
-					<td>陈先生</td>
-					<td>1000.00</td>
-					<td>2000.00</td>
-					<td><a style="font-size: 5px" href="alterclient.jsp">修改基本信息</a></td>
-					<td><a style="font-size: 5px" href="clientdetail.jsp">查看详细信息</a></td>
-				</tr>
+				<s:iterator value="list_clients">
+					<tr class="success">
+						<td style="font-size: 5px"><s:property value="idCardNo" /></td>
+						<td style="font-size: 5px" ><s:property value="clientName" />
+						</td>
+						<td style="font-size: 5px;"><s:property value="accAmount"/>
+						</td>
+						<td style="font-size: 5px;" ><s:property value="accTotalAmount"/>
+						</td>
+						<td ><a style="font-size: 5px" href="alterclient.jsp" >修改基本信息</a>
+						</td>
+						<td ><a style="font-size: 5px" href="clientdetail.jsp">查看详细信息</a>
+						</td>
+					</tr>
+				</s:iterator>
 			</tbody>
 		</table>
 	</div>

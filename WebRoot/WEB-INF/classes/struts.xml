@@ -14,6 +14,11 @@
 	<package name="clientMgr" extends="struts-default">
 		<action name="add_result" class="com.ftplatform.action.ClientInfoAction"
 			method="addclient">
+			<result name="success" type="redirectAction">load_clients</result>
+		</action>
+		<action name="load_clients" class="com.ftplatform.action.ClientInfoAction"
+			method="loadclients">
+			<result name="list_client">clientslist.jsp</result>
 		</action>
 	</package>
 	<package name="FundMgr" extends="struts-default">

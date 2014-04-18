@@ -17,6 +17,7 @@ public class FinancialAccountAction extends ActionSupport {
 	private String idcard_no;
 	private Timestamp created_date;
 	private String acc_pwd_check;
+	private String acc_total_amount;
 	private FinancialAccountService financialAccountService;
 
 	public Integer getAcc_no() {
@@ -84,6 +85,14 @@ public class FinancialAccountAction extends ActionSupport {
 		this.financialAccountService = financialAccountService;
 	}
 
+	public String getAcc_total_amount() {
+		return acc_total_amount;
+	}
+
+	public void setAcc_total_amount(String acc_total_amount) {
+		this.acc_total_amount = acc_total_amount;
+	}
+
 	public String addfinancialaccount() throws Exception {
 		FinancialAccount financialAccount = new FinancialAccount();
 		// financialAccount.setAccNo(100000+financialAccountService.total());
@@ -91,6 +100,7 @@ public class FinancialAccountAction extends ActionSupport {
 		financialAccount.setAccStatus("A");
 		financialAccount.setIdcardNo(idcard_no);
 		financialAccount.setAccAmount(Double.valueOf(acc_amount));
+		financialAccount.setAccTotalAmount(Double.valueOf(acc_amount));
 		Date dt = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Timestamp createdate = Timestamp.valueOf(sdf.format(dt));
@@ -106,8 +116,11 @@ public class FinancialAccountAction extends ActionSupport {
 		 financialAccount = financialAccountService
 				.findFinancialAccountByNo(acc_no);
 		 Double oldAmount =financialAccount.getAccAmount();
+		 Double oldTotalAmount=financialAccount.getAccTotalAmount();
 		Double newAmount = oldAmount + Double.valueOf(acc_amount);
+		Double newTotalAmount=oldTotalAmount+Double.valueOf(acc_amount);
 		financialAccount.setAccAmount(newAmount);
+		financialAccount.setAccTotalAmount(newTotalAmount);
 		financialAccountService.updateAccount(financialAccount);
 		return null;
 
@@ -118,8 +131,11 @@ public class FinancialAccountAction extends ActionSupport {
 		 financialAccount = financialAccountService
 				.findFinancialAccountByNo(acc_no);
 		 Double oldAmount =financialAccount.getAccAmount();
+		 Double oldTotalAmount=financialAccount.getAccTotalAmount();
 		Double newAmount = oldAmount - Double.valueOf(acc_amount);
+		Double newTotalAmount=oldTotalAmount-Double.valueOf(acc_amount);
 		financialAccount.setAccAmount(newAmount);
+		financialAccount.setAccTotalAmount(newTotalAmount);
 		financialAccountService.updateAccount(financialAccount);
 		return null;
 	}

@@ -15,6 +15,9 @@
 		<property name="accAmount" type="java.lang.Double">
 			<column name="ACC_AMOUNT" precision="12" not-null="true" />
 		</property>
+		<property name="accTotalAmount" type="java.lang.Double">
+			<column name="ACC_TOTAL_AMOUNT" precision="12" not-null="true" />
+		</property>
 		<property name="accStatus" type="java.lang.String">
 			<column name="ACC_STATUS" length="1" not-null="true">
 				<comment>A'-可用 'F'-冻结</comment>
@@ -26,5 +29,6 @@
 		<property name="createDate" type="java.sql.Timestamp">
 			<column name="CREATE_DATE" length="19" not-null="true" />
 		</property>
+		
 	</class>
 </hibernate-mapping>

@@ -3,9 +3,11 @@ package com.ftplatform.action;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import com.ftplatform.domain.Account;
 import com.ftplatform.domain.Client;
+import com.ftplatform.domain.ClientInfo;
 import com.ftplatform.service.ClientService;
 import com.ftplatform.service.impl.ClientServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
@@ -20,7 +22,7 @@ public class ClientInfoAction extends ActionSupport {
 	private String hobby;
 	private Timestamp created_date;
 	private ClientService clientService;
-
+    private List<ClientInfo> list_clients;
 	public String getId_card_no() {
 		return id_card_no;
 	}
@@ -85,6 +87,16 @@ public class ClientInfoAction extends ActionSupport {
 		this.created_date = created_date;
 	}
 
+
+
+	public List<ClientInfo> getList_clients() {
+		return list_clients;
+	}
+
+	public void setList_clients(List<ClientInfo> list_clients) {
+		this.list_clients = list_clients;
+	}
+
 	public ClientService getClientService() {
 		return clientService;
 	}
@@ -112,7 +124,12 @@ public class ClientInfoAction extends ActionSupport {
 		Timestamp createdate = Timestamp.valueOf(sdf.format(dt));
 		client.setCreatedDate(createdate);
 		clientService.createClient(client);
-		return null;
+		return SUCCESS;
 	}
 
+	public String  loadclients() throws Exception {
+		
+		list_clients=clientService.loadall();
+		return "list_client";
+	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import com.ftplatform.dao.ClientDao;
 import com.ftplatform.dao.impl.ClientDaoImpl;
 import com.ftplatform.domain.Client;
+import com.ftplatform.domain.ClientInfo;
 import com.ftplatform.service.ClientService;
 
 public class ClientServiceImpl implements ClientService {
@@ -38,7 +39,7 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public List<Client> loadall() {
+	public List<ClientInfo> loadall() {
 		// TODO Auto-generated method stub
 		return clientDao.loadall();
 	}

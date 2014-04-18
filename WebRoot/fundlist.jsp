@@ -57,7 +57,7 @@
 				<s:iterator value="fundlist">
 					<tr class="active">
 
-						<td style="font-size: 5px"><s:property value="fundNo" />
+						<td style="font-size: 5px"><s:property value="fundNo"  />
 						</td>
 						<td style="font-size: 5px"><s:property value="fundName" />
 						</td>
@@ -67,7 +67,7 @@
 						</td>
 						<td style="font-size: 5px"><s:property value="createdDate" />
 						</td>
-						<td><a style="font-size: 5px"
+						<td><a style="font-size: 5px;cursor:pointer" 
 							onclick="updateFund(<s:property value="fundNo"/>);">修改</a></td>
 
 					</tr>

@@ -17,7 +17,7 @@ public abstract class AbstractFinancialAccount implements java.io.Serializable {
 	private String accStatus;
 	private String idcardNo;
 	private Timestamp createDate;
-
+    private Double accTotalAmount;
 	// Constructors
 
 	/** default constructor */
@@ -26,12 +26,13 @@ public abstract class AbstractFinancialAccount implements java.io.Serializable {
 
 	/** full constructor */
 	public AbstractFinancialAccount(String accPwd, Double accAmount,
-			String accStatus, String idcardNo, Timestamp createDate) {
+			String accStatus, String idcardNo, Timestamp createDate,Double accTotalAmount) {
 		this.accPwd = accPwd;
 		this.accAmount = accAmount;
 		this.accStatus = accStatus;
 		this.idcardNo = idcardNo;
 		this.createDate = createDate;
+		this.accTotalAmount=accTotalAmount;
 	}
 
 	// Property accessors
@@ -82,6 +83,14 @@ public abstract class AbstractFinancialAccount implements java.io.Serializable {
 
 	public void setCreateDate(Timestamp createDate) {
 		this.createDate = createDate;
+	}
+
+	public Double getAccTotalAmount() {
+		return accTotalAmount;
+	}
+
+	public void setAccTotalAmount(Double accTotalAmount) {
+		this.accTotalAmount = accTotalAmount;
 	}
 
 }

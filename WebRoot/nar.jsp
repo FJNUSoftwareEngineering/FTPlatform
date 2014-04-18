@@ -90,7 +90,7 @@
 
 		<li class=""><a href="newclient.jsp" target="rightFrame"><i
 				class="icon-chevron-right"></i> 新客户开户</a></li>
-		<li class="active"><a href="clientslist.jsp" target="rightFrame"><i
+		<li class="active"><a href="<s:url action="load_clients"/>" target="rightFrame"><i
 				class="icon-chevron-right"></i> 客户信息列表</a></li>
 		<li class="icon-chevron-right-first"><i
 			class="icon-chevron-right"></i> <img src="image/bar_image3.png">资金账户管理
