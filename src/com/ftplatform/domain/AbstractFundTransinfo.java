@@ -16,7 +16,7 @@ public abstract class AbstractFundTransinfo implements java.io.Serializable {
 	private Integer accNo;
 	private Integer fundNo;
 	private Integer amount;
-	private Integer price;
+	private Double price;
 	private Timestamp createDate;
 
 	// Constructors
@@ -27,7 +27,7 @@ public abstract class AbstractFundTransinfo implements java.io.Serializable {
 
 	/** full constructor */
 	public AbstractFundTransinfo(Integer transId, String transType,
-			Integer accNo, Integer fundNo, Integer amount, Integer price,
+			Integer accNo, Integer fundNo, Integer amount, Double price,
 			Timestamp createDate) {
 		this.transId = transId;
 		this.transType = transType;
@@ -80,11 +80,11 @@ public abstract class AbstractFundTransinfo implements java.io.Serializable {
 		this.amount = amount;
 	}
 
-	public Integer getPrice() {
+	public Double getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(Integer price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

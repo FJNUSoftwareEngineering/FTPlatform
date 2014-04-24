@@ -16,7 +16,7 @@ public class FundTransinfo extends AbstractFundTransinfo implements
 
 	/** full constructor */
 	public FundTransinfo(Integer transId, String transType, Integer accNo,
-			Integer fundNo, Integer amount, Integer price, Timestamp createDate) {
+			Integer fundNo, Integer amount, Double price, Timestamp createDate) {
 		super(transId, transType, accNo, fundNo, amount, price, createDate);
 	}
 

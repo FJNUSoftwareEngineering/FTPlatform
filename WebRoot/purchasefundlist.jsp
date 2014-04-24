@@ -21,7 +21,11 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
 </head>
-
+<script type="text/javascript">   
+      function buyFund(fundNo){
+         location.href='<s:url action="buy_a_fund"/>?fund.fundNo='+fundNo;
+       }
+ </script>
 <body>
 	<hr style="margin-top: 0px;">
 	<div class="clearfix">
@@ -37,7 +41,7 @@
 	</div>
 	<hr style="margin-top: 10px;">
 	<div class="table-responsive">
-		<table class="table"  id="fundtable" cellpadding="0" cellspacing="0">
+		<table class="table" id="fundtable" cellpadding="0" cellspacing="0">
 			<thead>
 				<tr>
 					<th>基金编号</th>
@@ -48,17 +52,21 @@
 			</thead>
 
 			<tbody>
-			<s:iterator value="funds">
-				<tr class="active">
-					<td style="font-size: 5px"><s:property value="fundNo"/></td>
-					<td style="font-size: 5px"><s:property value="fundName"/></td>
-					<td style="font-size: 5px"><s:property value="price"/></td>
-					<td><a style="font-size: 5px" href="purchasefund.jsp">购买</a>
-					</td>
-				</tr>				
-		     </s:iterator>
+				<s:iterator value="fundlist">
+					<tr class="active">
+						<td style="font-size: 5px"><s:property value="fundNo" />
+						</td>
+						<td style="font-size: 5px"><s:property value="fundName" />
+						</td>
+						<td style="font-size: 5px"><s:property value="price" />
+						</td>
+						<td><a style="font-size: 5px; cursor:pointer"
+							onclick="buyFund(<s:property value="fundNo"/>);">购买</a>
+						</td>
+					</tr>
+				</s:iterator>
 			</tbody>
-	
+
 		</table>
 	</div>
 </body>

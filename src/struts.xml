@@ -38,6 +38,14 @@
 			method="loadFunds">
 			<result name="list">fundlist.jsp</result>
 		</action>
+		<action name="load_buy_funds" class="com.ftplatform.action.FundAction"
+			method="loadBuyFunds">
+			<result name="buyfundlist">purchasefundlist.jsp</result>
+		</action>
+		<action name="buy_a_fund" class="com.ftplatform.action.FundAction"
+			method="buyAFund">
+			<result name="buyfund">purchasefund.jsp</result>
+		</action>
 		<action name="load_a_fund" class="com.ftplatform.action.FundAction"
 			method="loadAFund">
 			<result name="alterfund">alterfund.jsp</result>
@@ -56,6 +64,23 @@
 		</action>
 		<action name="deduct_financialamount_result" class="com.ftplatform.action.FinancialAccountAction"
 			method="deductfinancialamount">
+		</action>
+	</package>
+	<package name="HoldingMgr" extends="struts-default">
+		<action name="add_holding" class="com.ftplatform.action.HoldingAction"
+			method="addholding">
+			<result name="buylist" type="redirectAction">load_buy_funds</result>
+		</action>
+		<action name="back_fund_result" class="com.ftplatform.action.HoldingAction"
+			method="backholding">
+			<result name="success">backfund.jsp</result>
+		</action>
+	</package>
+		<package name="HoldingTradeMgr" extends="struts-default">
+		<action name="fundtradeinfo" class="com.ftplatform.action.HoldingtradAction"
+			method="loadfundtransinfo">
+			
+			<result name="list">traderecordlist.jsp</result>
 		</action>
 	</package>
 </struts>    

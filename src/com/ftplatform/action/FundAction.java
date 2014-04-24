@@ -124,6 +124,18 @@ public class FundAction extends ActionSupport {
 		return "list";
 	}
 
+	public String loadBuyFunds() throws Exception{
+		fundlist = fundService.loadFund();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		for (int i = 0; i < fundlist.size(); i++) {
+			fundlist.get(i).setCreatedDate(
+					java.sql.Date.valueOf(sdf.format(fundlist.get(i)
+							.getCreatedDate())));
+		}
+		return "buyfundlist";
+		
+	}
+	
 	public String loadAFund() throws Exception {
 		fund = fundService.findFundByNo(fund.getFundNo());
 		if (fund.getStatus().equals("Y"))
@@ -135,7 +147,10 @@ public class FundAction extends ActionSupport {
 				.getCreatedDate())));
 		return "alterfund";
 	}
-
+	public String buyAFund() throws Exception {
+		fund = fundService.findFundByNo(fund.getFundNo());
+		return "buyfund";
+	}
 	public String updateFund() throws Exception {
 		if (fund.getStatus().equals("可交易")) {
 			fund.setStatus("Y");

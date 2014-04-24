@@ -37,10 +37,10 @@
 	</div>
 	<hr style="margin-top: 10px;">
 	<div class="table-responsive">
-		<table class="table">
+		<table class="table" id="tradeerecordtable" cellpadding="0"
+			cellspacing="0">
 			<thead>
 				<tr>
-					<th>#</th>
 					<th>基金编号</th>
 					<th>基金名称</th>
 					<th>基金账户</th>
@@ -50,78 +50,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="active">
-					<td>1</td>
-					<td>aehyok</td>
-					<td>aehyok</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-				</tr>
-				<tr class="success">
-					<td>2</td>
-					<td>lynn</td>
-					<td>aehyok</td>
-					<td>thl</td>
-					<td>@lynn</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-				</tr>
-				<tr class="warning">
-					<td>3</td>
-					<td>Amdy</td>
-					<td>aehyok</td>
-					<td>Amy</td>
-					<td>@Amdy</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-				</tr>
-				<tr class="danger">
-					<td>4</td>
-					<td>Amdy</td>
-					<td>aehyok</td>
-					<td>Amy</td>
-					<td>@Amdy</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-				</tr>
-				<tr class="active">
-					<td>5</td>
-					<td>aehyok</td>
-					<td>aehyok</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-				</tr>
-				<tr class="success">
-					<td>2</td>
-					<td>lynn</td>
-					<td>aehyok</td>
-					<td>thl</td>
-					<td>@lynn</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-				</tr>
-				<tr class="warning">
-					<td>3</td>
-					<td>Amdy</td>
-					<td>aehyok</td>
-					<td>Amy</td>
-					<td>@Amdy</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-				</tr>
-				<tr class="danger">
-					<td>4</td>
-					<td>Amdy</td>
-					<td>aehyok</td>
-					<td>Amy</td>
-					<td>@Amdy</td>
-					<td>leo</td>
-					<td>@aehyok</td>
-				</tr>
+				<s:iterator value="fundTradeVO_list">
+					<tr class="active">
+						<td style="font-size: 5px"><s:property value="fundNo" /></td>
+						<td style="font-size: 5px"><s:property value="fundName" /></td>
+						<td style="font-size: 5px"><s:property value="accNo" /></td>
+						<td style="font-size: 5px"><s:property value="price" /></td>
+						<td style="font-size: 5px"><s:property value="tradeAmount" /></td>
+						<td style="font-size: 5px"><s:property value="createDate" /></td>
+					</tr>
+				</s:iterator>
 			</tbody>
 		</table>
 	</div>

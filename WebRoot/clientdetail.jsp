@@ -23,10 +23,7 @@
 </head>
 
 <body>
-	<div class="jumbotron" style="padding-top: 5; padding-bottom: 10">
-		<div class="clientcard" style="width: 40%;">
-			<h3 class="right small clearfix">客户基本信息:</h3>
-		</div>
+	<div class="jumbotron" style="padding-top: 3; padding-bottom: 13">
 		<div class="clearfix">
 			<div class="clientcard" style="width: 40%; float: left;">
 				<h3 class="right small clearfix">客户代码:</h3>
@@ -53,17 +50,13 @@
 			</div>
 			<div class="clientsex" style="width: 40%;float: left;">
 				<!-- /btn-group -->
-				<div class="btn-group top right ">
-					<button class=" btn btn-primary dropdown-toggle"
-						data-toggle="dropdown" id="selectsex">
-						男<span class="caret"></span>
-					</button>
-					<input type="text" style="display:none;" name="sex" id="sex"
-						value="M" required>
+				<div class="top right " style="font-size: 15px;font-style: normal;">
+					<s:radio name="client.sex"
+						list="#{'M':'&nbsp;&nbsp;&nbsp;男&nbsp;&nbsp;&nbsp; ','W':'&nbsp;&nbsp;&nbsp;女&nbsp;&nbsp;&nbsp;'}"></s:radio>
 				</div>
 			</div>
-
 		</div>
+
 		<div class="clearfix">
 			<div class="clientphone" style="width: 40%; float: left;">
 				<h3 class="right small clearfix">联系方式:</h3>
@@ -95,11 +88,20 @@
 			</div>
 
 		</div>
-	</div>
-	<div class="jumbotron" style="padding-top: 5; padding-bottom: 10">
-		<div class="clientcard" style="width: 40%;">
-			<h3 class="right small clearfix">基金账户信息:</h3>
+		<div class="clearfix">
+			<div class="clientadress" style="width: 40%; float: left;">
+				<h3 class="right small clearfix">地址:</h3>
+			</div>
+			<div class="clientadress" style="width: 40%;float: left;">
+				<textarea class="form-control right top" style="width: 80%"
+					readonly="ture" name="address" placeholder="Type address" required></textarea>
+			</div>
+
 		</div>
+	</div>
+
+
+	<div class="jumbotron" style="padding-top: 3; padding-bottom: 13">
 		<div class="clearfix">
 			<div class="clientcard" style="width: 40%; float: left;">
 				<h3 class="right small clearfix">账户号码:</h3>

@@ -106,11 +106,11 @@
 		<li class="icon-chevron-right-first"><i
 			class="icon-chevron-right"></i> <img src="image/bar_image4.png">
 			资金产品交易</li>
-		<li class=""><a href="purchasefundlist.jsp" target="rightFrame"><i
+		<li class=""><a href="<s:url action="load_buy_funds"/>" target="rightFrame"><i
 				class="icon-chevron-right"></i> 购买基金</a></li>
 		<li class=""><a href="backfund.jsp" target="rightFrame"><i
 				class="icon-chevron-right"></i> 赎回基金</a></li>
-		<li class=""><a href="traderecordlist.jsp" target="rightFrame"><i
+		<li class=""><a href="<s:url action="fundtradeinfo"/>" target="rightFrame"><i
 				class="icon-chevron-right"></i> 基金交易记录</a></li>
 		<li class=""><a href="holdings.jsp" target="rightFrame"><i
 				class="icon-chevron-right"></i> 持仓情况</a></li>
