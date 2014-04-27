@@ -25,6 +25,9 @@
       function updateClient(idCardNo){
          location.href='<s:url action="load_a_client"/>?client.idCardNo='+idCardNo;
        }
+        function clientDetail(idCardNo){
+         location.href='<s:url action="client_detail"/>?client.idCardNo='+idCardNo;
+       }
  </script>
 <body>
 	<hr style="margin-top: 0px;">
@@ -47,26 +50,28 @@
 				<tr>
 					<th style="font-size: 15px" align="left">客户编号</th>
 					<th style="font-size: 15px" align="center">姓名</th>
-					<th style="font-size: 15px" align="right" >可用资产</th>
+					<th style="font-size: 15px" align="right">可用资产</th>
 					<th style="font-size: 15px" align="right">总资产</th>
-					<th style="font-size: 15px" align="center" ></th>
+					<th style="font-size: 15px" align="center"></th>
 					<th style="font-size: 15px" align="center"></th>
 				</tr>
 			</thead>
 			<tbody>
 				<s:iterator value="list_clients">
 					<tr class="active">
-						<td style="font-size: 5px"><s:property value="idCardNo" /></td>
-						<td style="font-size: 5px" ><s:property value="clientName" />
+						<td style="font-size: 5px"><s:property value="idCardNo" />
 						</td>
-						<td style="font-size: 5px;"><s:property value="accAmount"/>
+						<td style="font-size: 5px"><s:property value="clientName" />
 						</td>
-						<td style="font-size: 5px;" ><s:property value="accTotalAmount"/>
+						<td style="font-size: 5px;"><s:property value="accAmount" />
 						</td>
-						<td ><a style="font-size: 5px; cursor:pointer" 
+						<td style="font-size: 5px;"><s:property
+								value="accTotalAmount" /></td>
+						<td><a style="font-size: 5px; cursor:pointer"
 							onclick="updateClient(<s:property value="idCardNo"/>);">修改基本信息</a>
 						</td>
-						<td ><a style="font-size: 5px" href="clientdetail.jsp">查看详细信息</a>
+						<td><a style="font-size: 5px; cursor:pointer"
+							onclick="clientDetail(<s:property value="idCardNo"/>);">查看详细信息</a>
 						</td>
 					</tr>
 				</s:iterator>

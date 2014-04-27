@@ -42,5 +42,11 @@ public class FinancialAccountServiceImpl implements FinancialAccountService {
 
 	}
 
+	@Override
+	public FinancialAccount findFinancialAccountById(String idCardNo) {
+		// TODO Auto-generated method stub
+		return financialAccountDao.findFinancialAccountById(idCardNo);
+	}
+
 
 }

@@ -4,7 +4,10 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.ftplatform.domain.Client;
 import com.ftplatform.domain.FinancialAccount;
+import com.ftplatform.domain.VO.FinancialAccountVO;
+import com.ftplatform.service.ClientService;
 import com.ftplatform.service.FinancialAccountService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -19,7 +22,9 @@ public class FinancialAccountAction extends ActionSupport {
 	private String acc_pwd_check;
 	private String acc_total_amount;
 	private FinancialAccountService financialAccountService;
-
+    private FinancialAccount financialAccount;
+    private FinancialAccountVO financialAccountVO;
+    private ClientService clientService;
 	public Integer getAcc_no() {
 		return acc_no;
 	}
@@ -93,6 +98,30 @@ public class FinancialAccountAction extends ActionSupport {
 		this.acc_total_amount = acc_total_amount;
 	}
 
+	public FinancialAccount getFinancialAccount() {
+		return financialAccount;
+	}
+
+	public void setFinancialAccount(FinancialAccount financialAccount) {
+		this.financialAccount = financialAccount;
+	}
+
+	public FinancialAccountVO getFinancialAccountVO() {
+		return financialAccountVO;
+	}
+
+	public void setFinancialAccountVO(FinancialAccountVO financialAccountVO) {
+		this.financialAccountVO = financialAccountVO;
+	}
+
+	public ClientService getClientService() {
+		return clientService;
+	}
+
+	public void setClientService(ClientService clientService) {
+		this.clientService = clientService;
+	}
+
 	public String addfinancialaccount() throws Exception {
 		FinancialAccount financialAccount = new FinancialAccount();
 		// financialAccount.setAccNo(100000+financialAccountService.total());
@@ -138,5 +167,27 @@ public class FinancialAccountAction extends ActionSupport {
 		financialAccount.setAccTotalAmount(newTotalAmount);
 		financialAccountService.updateAccount(financialAccount);
 		return null;
+	}
+	
+	public String searchfinancialaccount() throws Exception{
+		
+		financialAccount=financialAccountService.findFinancialAccountByNo(acc_no);
+		Client client=new Client();
+		client=clientService.getClientByNo(financialAccount.getIdcardNo());
+		FinancialAccountVO temp=new FinancialAccountVO();
+		temp.setAccNo(financialAccount.getAccNo());
+		temp.setAccTotalAmount(financialAccount.getAccTotalAmount());
+		temp.setClientName(client.getClientName());
+		temp.setCreatedDate(financialAccount.getCreateDate());
+		temp.setIdCardNo(financialAccount.getIdcardNo());
+		if(financialAccount.getAccStatus().equals("A"))
+		{
+			temp.setStatus("正常");
+		}
+		else {
+			temp.setStatus("冻结");
+		}
+		financialAccountVO=temp;
+		return SUCCESS;		
 	}
 }

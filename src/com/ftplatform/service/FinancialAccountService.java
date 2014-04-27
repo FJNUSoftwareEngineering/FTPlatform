@@ -11,6 +11,6 @@ public interface FinancialAccountService {
 	void updateAccount(FinancialAccount financialAccount);
 
 	FinancialAccount findFinancialAccountByNo(Integer acc_no);
-	
 
+	FinancialAccount findFinancialAccountById(String idCardNo);
 }

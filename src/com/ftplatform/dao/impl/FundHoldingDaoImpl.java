@@ -27,11 +27,11 @@ public class FundHoldingDaoImpl implements FundHoldingDao {
 	}
 
 	@Override
-	public FundHolding fundHoldbyAccNo(Integer accNo) {
+	public FundHolding fundHoldbyAccNo(Integer accNo,Integer fundNo) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		Query query = session.createQuery("from FundHolding a where a.accNo="
-				+ accNo);
+				+ accNo + " and a.fundNo="+fundNo);
 		List<FundHolding> list = query.list();
 		session.close();
 		// System.out.println(list.size());
@@ -48,6 +48,21 @@ public class FundHoldingDaoImpl implements FundHoldingDao {
 		session.update(fundholding);
 		session.flush();
 		session.close();
+	}
+
+	@Override
+	public List<FundHolding> fundHoldbyAccNo(Integer accNo) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from FundHolding a where a.accNo="
+				+ accNo);
+		List<FundHolding> list = query.list();
+		session.close();
+		// System.out.println(list.size());
+		if (list.size() > 0)
+			return list;
+		else
+			return null;
 	}
 
 }

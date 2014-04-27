@@ -30,7 +30,7 @@
 			<div class="clientcard" style="width: 40%;float: left;">
 				<h3 class="clearfix">资金帐户号码:</h3>
 				<input type="text" class="form-control"
-					style="float: left;margin-top: 5px;width: 65%" name="search"
+					style="float: left;margin-top: 5px;width: 65%" name=acc_no
 					placeholder="Capital account number" required>
 				<button class="btn btn-mid btn-primary"
 					style="margin-top: 5px;font-size: 13" type="submit">查 询</button>
@@ -45,9 +45,9 @@
 				<h3 class="right small clearfix">账户号码:</h3>
 			</div>
 			<div class="clientcard" style="width: 40%;float: left;">
-				<input type="text" class="form-control right top" readOnly="true"
-					style="width: 80%" name="id_card_no"
-					placeholder="Capital account number" required>
+				<s:textfield Class="form-control right top" style="width: 80%"
+					placeholder="Capital account number" readonly="true"
+					name="financialAccountVO.accNo"></s:textfield>
 			</div>
 		</div>
 		<div class="clearfix">
@@ -55,9 +55,9 @@
 				<h3 class="right small clearfix">资金:</h3>
 			</div>
 			<div class="clientcard" style="width: 40%;float: left;">
-				<input type="text" class="form-control right top" style="width: 80%"
-					readOnly="true" name="id_card_no" placeholder="Capital amount"
-					required>
+				<s:textfield Class="form-control right top" style="width: 80%"
+					placeholder="Capital amount" readonly="true"
+					name="financialAccountVO.accTotalAmount"></s:textfield>
 			</div>
 		</div>
 		<div class="clearfix">
@@ -65,9 +65,9 @@
 				<h3 class="right small clearfix">开户时间:</h3>
 			</div>
 			<div class="clientname" style="width: 40%;float: left;">
-				<input type="text" class="form-control right top" style="width: 80%"
-					readOnly="true" name="client_name"
-					placeholder="Capital create date" required>
+				<s:textfield Class="form-control right top" style="width: 80%"
+					placeholder="Capital create date" readonly="true"
+					name="financialAccountVO.createdDate"></s:textfield>
 			</div>
 
 		</div>
@@ -77,9 +77,10 @@
 				<h3 class="right small clearfix">客户代码:</h3>
 			</div>
 			<div class="clientname" style="width: 40%;float: left;">
-				<input type="text" class="form-control right top" style="width: 80%"
-					readOnly="true" name="client_name" placeholder="Capital ID Card No"
-					required>
+				<s:textfield Class="form-control right top" style="width: 80%"
+					placeholder="Capital ID Card No" readonly="true"
+					name="financialAccountVO.idCardNo"></s:textfield>
+
 			</div>
 
 
@@ -89,9 +90,10 @@
 				<h3 class="right small clearfix">客户名称:</h3>
 			</div>
 			<div class="clientname" style="width: 40%;float: left;">
-				<input type="text" class="form-control right top" style="width: 80%"
-					readOnly="true" name="client_name" placeholder="Capital name"
-					required>
+				<s:textfield Class="form-control right top" style="width: 80%"
+					placeholder="Capital name" readonly="true"
+					name="financialAccountVO.clientName"></s:textfield>
+
 			</div>
 
 		</div>
@@ -100,9 +102,10 @@
 				<h3 class="right small clearfix">账户状态:</h3>
 			</div>
 			<div class="clientname" style="width: 40%;float: left;">
-				<input type="text" class="form-control right top" readOnly="true"
-					style="width: 80%" name="client_name" placeholder="Capital state"
-					required>
+				<s:textfield Class="form-control right top" style="width: 80%"
+					placeholder="Capital state" readonly="true"
+					name="financialAccountVO.status"></s:textfield>
+
 			</div>
 			<div class="clientname" style="width: 40%;float: left;">
 				<button class="btn btn-mid btn-danger top-max "

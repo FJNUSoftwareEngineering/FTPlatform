@@ -63,4 +63,20 @@ public class FinancialAccountDaoImpl implements FinancialAccountDao {
 			return null;
 	}
 
+	@Override
+	public FinancialAccount findFinancialAccountById(String idCardNo) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from FinancialAccount a where a.idcardNo="
+				+ idCardNo);
+		session.flush();
+		List<FinancialAccount> list = query.list();
+
+		session.close();
+		if (list.size() > 0)
+			return list.get(0);
+		else
+			return null;
+	}
+
 }

@@ -5,10 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import com.ftplatform.domain.Account;
 import com.ftplatform.domain.Client;
 import com.ftplatform.domain.ClientInfo;
+import com.ftplatform.domain.FinancialAccount;
 import com.ftplatform.service.ClientService;
+import com.ftplatform.service.FinancialAccountService;
 import com.ftplatform.service.impl.ClientServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -24,6 +25,8 @@ public class ClientInfoAction extends ActionSupport {
 	private ClientService clientService;
 	private List<ClientInfo> list_clients;
 	private Client client;
+	private FinancialAccount financialAccount;
+	private FinancialAccountService financialAccountService;
 
 	public String getId_card_no() {
 		return id_card_no;
@@ -117,6 +120,23 @@ public class ClientInfoAction extends ActionSupport {
 		this.clientService = clientServiceImpl;
 	}
 
+	public FinancialAccountService getFinancialAccountService() {
+		return financialAccountService;
+	}
+
+	public void setFinancialAccountService(
+			FinancialAccountService financialAccountService) {
+		this.financialAccountService = financialAccountService;
+	}
+
+	public FinancialAccount getFinancialAccount() {
+		return financialAccount;
+	}
+
+	public void setFinancialAccount(FinancialAccount financialAccount) {
+		this.financialAccount = financialAccount;
+	}
+
 	public String addclient() throws Exception {
 		Client client = new Client();
 		client.setIdCardNo(id_card_no);
@@ -147,8 +167,24 @@ public class ClientInfoAction extends ActionSupport {
 		return "alterclient";
 
 	}
-	public String updateClient() throws Exception{
+
+	public String updateClient() throws Exception {
 		clientService.update(client);
 		return SUCCESS;
+	}
+
+	public String clientdetail() throws Exception {
+		client = clientService.getClientByNo(client.getIdCardNo());
+		financialAccount = financialAccountService
+				.findFinancialAccountById(client.getIdCardNo());
+		if (financialAccount.getAccStatus().equals("A")) {
+			financialAccount.setAccStatus("正常");  
+		}
+		else 
+		{
+			financialAccount.setAccStatus("冻结");  
+		}
+		return SUCCESS;
+
 	}
 }

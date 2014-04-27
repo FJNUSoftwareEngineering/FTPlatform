@@ -28,6 +28,10 @@
 			method="updateClient">
 			<result name="success" type="redirectAction">load_clients</result>
 		</action>
+		<action name="client_detail" class="com.ftplatform.action.ClientInfoAction"
+			method="clientdetail">
+			<result name="success">clientdetail.jsp</result>
+		</action>
 	</package>
 	<package name="FundMgr" extends="struts-default">
 		<action name="add_fund_result" class="com.ftplatform.action.FundAction"
@@ -65,6 +69,12 @@
 		<action name="deduct_financialamount_result" class="com.ftplatform.action.FinancialAccountAction"
 			method="deductfinancialamount">
 		</action>
+		
+		<action name="search_financial_account" class="com.ftplatform.action.FinancialAccountAction"
+			method="searchfinancialaccount">
+			<result name="success">fundaccountsearch.jsp</result>
+		</action>
+		
 	</package>
 	<package name="HoldingMgr" extends="struts-default">
 		<action name="add_holding" class="com.ftplatform.action.HoldingAction"
@@ -76,11 +86,14 @@
 			<result name="success">backfund.jsp</result>
 		</action>
 	</package>
-		<package name="HoldingTradeMgr" extends="struts-default">
+	<package name="HoldingTradeMgr" extends="struts-default">
 		<action name="fundtradeinfo" class="com.ftplatform.action.HoldingtradAction"
 			method="loadfundtransinfo">
-			
-			<result name="list">traderecordlist.jsp</result>
+			<result name="fundTradeVO_list">traderecordlist.jsp</result>
+		</action>	
+		<action name="search_holding" class="com.ftplatform.action.HoldingtradAction"
+			method="searchholding">
+			<result name="personalHoldingVO_list">holdings.jsp</result>
 		</action>
 	</package>
 </struts>    

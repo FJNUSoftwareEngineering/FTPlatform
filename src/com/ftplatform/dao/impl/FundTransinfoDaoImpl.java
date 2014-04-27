@@ -38,7 +38,7 @@ public class FundTransinfoDaoImpl implements FundTransinfoDao {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		SQLQuery SQLquery = session
-				.createSQLQuery("select a.*,b.fund_name from fund_transinfo a,fund b where a.fund_no=b.fund_no; ");
+				.createSQLQuery("select a.*,b.fund_name from fund_transinfo a,fund b where a.fund_no=b.fund_no order by create_date desc; ");
 		SQLquery.addScalar("TRANS_ID").addScalar("TRANS_TYPE")
 				.addScalar("ACC_NO").addScalar("FUND_NO").addScalar("AMOUNT")
 				.addScalar("PRICE").addScalar("CREATE_DATE")
@@ -48,7 +48,6 @@ public class FundTransinfoDaoImpl implements FundTransinfoDao {
 		while (results.hasNext()) {
 			FundTradeVO fundTradeVO = new FundTradeVO();
 			Object[] rows = (Object[]) results.next();
-			System.out.println(rows[1]);
 		    String type =null;
 			if (rows[1].equals('B')) {
 				type = "+";
