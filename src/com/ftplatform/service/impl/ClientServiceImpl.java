@@ -6,6 +6,7 @@ import com.ftplatform.dao.ClientDao;
 import com.ftplatform.dao.impl.ClientDaoImpl;
 import com.ftplatform.domain.Client;
 import com.ftplatform.domain.ClientInfo;
+import com.ftplatform.domain.VO.ClientFinancialVO;
 import com.ftplatform.service.ClientService;
 
 public class ClientServiceImpl implements ClientService {
@@ -42,6 +43,12 @@ public class ClientServiceImpl implements ClientService {
 	public List<ClientInfo> loadall() {
 		// TODO Auto-generated method stub
 		return clientDao.loadall();
+	}
+
+	@Override
+	public List<ClientFinancialVO> loadclientfinancial(String idCardNo) {
+		// TODO Auto-generated method stub
+		return clientDao.loadclientfinancial(idCardNo);
 	}
 
 }

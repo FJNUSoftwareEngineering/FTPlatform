@@ -106,8 +106,7 @@
 			</div>
 			<div class="clientcard" style="width: 40%;float: left;">
 				<s:textfield Class="form-control right top" readonly="true"
-					style="width: 80%" name="client.idCardNo"
-					placeholder="Type acc No" />
+					style="width: 80%" name="client.idCardNo" placeholder="Type acc No" />
 			</div>
 		</div>
 		<div class="clearfix">
@@ -158,43 +157,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="active">
-					<td style="font-size: 5px">3503432212333</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">50</td>
-					<td style="font-size: 5px">100.00</td>
-					<td style="font-size: 5px">正常</td>
-					<td style="font-size: 5px">2014-4-15 40:35:34</td>
-					<td style="font-size: 5px">313535432</td>
-				</tr>
-				<tr class="success">
-					<td style="font-size: 5px">3503432212333</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">50</td>
-					<td style="font-size: 5px">100.00</td>
-					<td style="font-size: 5px">正常</td>
-					<td style="font-size: 5px">2014-4-15 40:35:34</td>
-					<td style="font-size: 5px">313535432</td>
-				</tr>
-				<tr class="warning">
-					<td style="font-size: 5px">3503432212333</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">50</td>
-					<td style="font-size: 5px">100.00</td>
-					<td style="font-size: 5px">正常</td>
-					<td style="font-size: 5px">2014-4-15 40:35:34</td>
-					<td style="font-size: 5px">313535432</td>
-				</tr>
-				<tr class="danger">
-					<td style="font-size: 5px">3503432212333</td>
-					<td style="font-size: 5px">证券投资基金</td>
-					<td style="font-size: 5px">50</td>
-					<td style="font-size: 5px">100.00</td>
-					<td style="font-size: 5px">正常</td>
-					<td style="font-size: 5px">2014-4-15 40:35:34</td>
-					<td style="font-size: 5px">313535432</td>
-				</tr>
-
+				<s:iterator value="list_client_financial">
+					<tr class="active">
+						<td style="font-size: 5px"><s:property value="idCardNo" /></td>
+						<td style="font-size: 5px"><s:property value="fundName" /></td>
+						<td style="font-size: 5px"><s:property value="amount" /></td>
+						<td style="font-size: 5px"><s:property value="price" /></td>
+						<td style="font-size: 5px"><s:property value="status" /></td>
+						<td style="font-size: 5px"><s:property value="createDate" /></td>
+						<td style="font-size: 5px"><s:property value="accNo" /></td>
+					</tr>
+				</s:iterator>
 			</tbody>
 		</table>
 	</div>

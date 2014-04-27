@@ -8,6 +8,7 @@ import java.util.List;
 import com.ftplatform.domain.Client;
 import com.ftplatform.domain.ClientInfo;
 import com.ftplatform.domain.FinancialAccount;
+import com.ftplatform.domain.VO.ClientFinancialVO;
 import com.ftplatform.service.ClientService;
 import com.ftplatform.service.FinancialAccountService;
 import com.ftplatform.service.impl.ClientServiceImpl;
@@ -27,7 +28,7 @@ public class ClientInfoAction extends ActionSupport {
 	private Client client;
 	private FinancialAccount financialAccount;
 	private FinancialAccountService financialAccountService;
-
+	private List<ClientFinancialVO> list_client_financial;
 	public String getId_card_no() {
 		return id_card_no;
 	}
@@ -137,6 +138,15 @@ public class ClientInfoAction extends ActionSupport {
 		this.financialAccount = financialAccount;
 	}
 
+	public List<ClientFinancialVO> getList_client_financial() {
+		return list_client_financial;
+	}
+
+	public void setList_client_financial(
+			List<ClientFinancialVO> list_client_financial) {
+		this.list_client_financial = list_client_financial;
+	}
+
 	public String addclient() throws Exception {
 		Client client = new Client();
 		client.setIdCardNo(id_card_no);
@@ -184,7 +194,10 @@ public class ClientInfoAction extends ActionSupport {
 		{
 			financialAccount.setAccStatus("冻结");  
 		}
-		return SUCCESS;
+		
+		list_client_financial=clientService.loadclientfinancial(client.getIdCardNo());
+		System.out.println(list_client_financial.size());
+		return "list_client_financial";
 
 	}
 }
