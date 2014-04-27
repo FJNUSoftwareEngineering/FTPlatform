@@ -22,7 +22,7 @@
 <body>
 	<div class="container"
 		style="background:url(image/bg2.jpg);background-repeat:no-repeat;">
-		<form action="login_result" class="form-signin"
+		<form action="login_result" method="post" class="form-signin"
 			style="background:url(image/login_bg.png)">
 			<h3 class="form-signin-heading form-signin-heading-signin">登 录</h3>
 			<input type="text" class="form-control form-control-signin"
