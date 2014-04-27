@@ -88,7 +88,8 @@
 					</div>
 					<div class="clientemail" style="width: 40%;float: left;">
 						<s:textfield Class="form-control right top" style="width: 80%"
-							name="client.email"></s:textfield>
+							name="client.email"  pattern="^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$"
+							title="邮箱正确格式：xxx@xxx.xxx"></s:textfield>
 					</div>
 
 				</div>

@@ -60,7 +60,8 @@
 					<div class="clientsex" style="width: 40%;float: left;">
 						<!-- /btn-group -->
 						<div class="top right ">
-							  <s:radio name="sex"  list="#{'M':'&nbsp;&nbsp;&nbsp;男&nbsp;&nbsp;&nbsp; ','W':'&nbsp;&nbsp;&nbsp;女&nbsp;&nbsp;&nbsp;'}"></s:radio>
+							<s:radio name="sex"
+								list="#{'M':'&nbsp;&nbsp;&nbsp;男&nbsp;&nbsp;&nbsp; ','W':'&nbsp;&nbsp;&nbsp;女&nbsp;&nbsp;&nbsp;'}"></s:radio>
 						</div>
 					</div>
 
@@ -92,7 +93,9 @@
 					</div>
 					<div class="clientemail" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
-							style="width: 80%" name="email" placeholder="Type email" required>
+							style="width: 80%" name="email" placeholder="Type email" required
+							pattern="^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$"
+							title="邮箱正确格式：xxx@xxx.xxx">
 					</div>
 
 				</div>
@@ -118,11 +121,11 @@
 <script language="JavaScript">
 	function SelectMan() {
 		selectsex.innerHTML = "男<span class=\"caret\"></span>";
-		sex.value="M";
+		sex.value = "M";
 	}
 	function SelectWoman() {
 		selectsex.innerHTML = "女<span class=\"caret\"></span>";
-		sex.value="W";
+		sex.value = "W";
 	}
 </script>
 </html>

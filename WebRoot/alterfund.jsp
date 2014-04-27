@@ -47,7 +47,7 @@
 					</div>
 					<div class="fundName" style="width: 40%;float: left;">
 						<s:textfield Class="form-control right top" style="width: 80%"
-							name="fund.fundName"></s:textfield>
+							name="fund.fundName" ></s:textfield>
 
 					</div>
 				</div>
@@ -57,7 +57,8 @@
 					</div>
 					<div class="price" style="width: 40%;float: left;">
 						<s:textfield Class="form-control right top" style="width: 80%"
-							name="fund.price"></s:textfield>
+							name="fund.price"  pattern="^\d{1,10}(\.\d{1,2})?$"
+							title="价格正确格式：0.39或1.00"></s:textfield>
 					</div>
 
 				</div>
@@ -86,7 +87,7 @@
 					</div>
 					<div class="createtime" style="width: 40%;float: left;">
 						<s:textfield Class="form-control right top" style="width: 80%"
-							name="fund.createdDate"></s:textfield>
+							name="fund.createdDate" readonly="true"></s:textfield>
 					</div>
 				</div>
 				<button class="btn btn-mid btn-primary top-max "

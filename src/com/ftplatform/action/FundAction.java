@@ -106,9 +106,15 @@ public class FundAction extends ActionSupport {
 		fund.setPrice(Double.valueOf(fundprice));
 		fund.setDescription(description);
 		fund.setStatus("Y");
-		fund.setCreatedDate(created_date);
+		Date dt = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat(
+				"yyyy-MM-dd");
+		String st=sdf.format(dt);
+		Date dt2=sdf.parse(st);
+		fund.setCreatedDate(dt2);
 
 		fundService.createFund(fund);
+		
 		return SUCCESS;
 
 	}

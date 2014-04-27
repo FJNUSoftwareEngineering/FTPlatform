@@ -48,8 +48,9 @@
 					</div>
 					<div class="fundprice" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
-							style="width: 80%" name="fundprice" placeholder="Type price"
-							required>
+							style="width: 80%" name="fundprice" placeholder="Type price" required
+							pattern="^\d{1,10}(\.\d{1,2})?$"
+							title="价格正确格式：0.39或1.00">
 					</div>
 
 				</div>
@@ -59,8 +60,9 @@
 						<h3 class="right small clearfix">描述:</h3>
 					</div>
 					<div class="funddescribe" style="width: 40%; float: left;">
-						<textarea class="form-control right top" style="height:110px;width: 80%"
-							name="description" placeholder="Type describe" required></textarea>
+						<textarea class="form-control right top"
+							style="height:110px;width: 80%" name="description"
+							placeholder="Type describe" required></textarea>
 					</div>
 
 				</div>
