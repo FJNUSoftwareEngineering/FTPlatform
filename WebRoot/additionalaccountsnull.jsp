@@ -34,6 +34,7 @@
 					<input type="text" class="form-control right top"
 						style="width: 80%" name="acc_no" placeholder="account no" required pattern="^\d+$"
 							title="请输入正确的资金账户格式">
+					<h4 style="color: red;">资金账户不错在或冻结，请重新输入</h4>
 				</div>
 			</div>
 			<div class="clearfix">
@@ -43,7 +44,7 @@
 				<div class="clientcard" style="width: 40%;float: left;">
 					<input type="text" class="form-control right top"
 						style="width: 80%" name="acc_amount" placeholder="account amount"
-						required pattern="^\d{1,10}(\.\d{1,2})?$" title="价格正确格式：0.39或1.00">
+						required pattern="^\d{1,10}(\.\d{1,2})?$" title="正确格式：0.39或1.00">
 				</div>
 			</div>
 			<button class="btn btn-mid btn-danger top-max "

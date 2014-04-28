@@ -22,9 +22,10 @@ public class FinancialAccountAction extends ActionSupport {
 	private String acc_pwd_check;
 	private String acc_total_amount;
 	private FinancialAccountService financialAccountService;
-    private FinancialAccount financialAccount;
-    private FinancialAccountVO financialAccountVO;
-    private ClientService clientService;
+	private FinancialAccount financialAccount;
+	private FinancialAccountVO financialAccountVO;
+	private ClientService clientService;
+
 	public Integer getAcc_no() {
 		return acc_no;
 	}
@@ -142,52 +143,66 @@ public class FinancialAccountAction extends ActionSupport {
 
 	public String addfinancialamount() throws Exception {
 		FinancialAccount financialAccount = new FinancialAccount();
-		 financialAccount = financialAccountService
+		financialAccount = financialAccountService
 				.findFinancialAccountByNo(acc_no);
-		 Double oldAmount =financialAccount.getAccAmount();
-		 Double oldTotalAmount=financialAccount.getAccTotalAmount();
-		Double newAmount = oldAmount + Double.valueOf(acc_amount);
-		Double newTotalAmount=oldTotalAmount+Double.valueOf(acc_amount);
-		financialAccount.setAccAmount(newAmount);
-		financialAccount.setAccTotalAmount(newTotalAmount);
-		financialAccountService.updateAccount(financialAccount);
-		return null;
+		if (financialAccount == null
+				|| financialAccount.getAccStatus().equals("F")) {
+			return "error";
+		} else {
+			Double oldAmount = financialAccount.getAccAmount();
+			Double oldTotalAmount = financialAccount.getAccTotalAmount();
+			Double newAmount = oldAmount + Double.valueOf(acc_amount);
+			Double newTotalAmount = oldTotalAmount + Double.valueOf(acc_amount);
+			financialAccount.setAccAmount(newAmount);
+			financialAccount.setAccTotalAmount(newTotalAmount);
+			financialAccountService.updateAccount(financialAccount);
+			return SUCCESS;
+		}
 
 	}
 
 	public String deductfinancialamount() throws Exception {
 		FinancialAccount financialAccount = new FinancialAccount();
-		 financialAccount = financialAccountService
+		financialAccount = financialAccountService
 				.findFinancialAccountByNo(acc_no);
-		 Double oldAmount =financialAccount.getAccAmount();
-		 Double oldTotalAmount=financialAccount.getAccTotalAmount();
-		Double newAmount = oldAmount - Double.valueOf(acc_amount);
-		Double newTotalAmount=oldTotalAmount-Double.valueOf(acc_amount);
-		financialAccount.setAccAmount(newAmount);
-		financialAccount.setAccTotalAmount(newTotalAmount);
-		financialAccountService.updateAccount(financialAccount);
-		return null;
+		if (financialAccount == null
+				|| financialAccount.getAccStatus().equals("F")) {
+			return "error";
+		} else {
+			Double oldAmount = financialAccount.getAccAmount();
+			Double oldTotalAmount = financialAccount.getAccTotalAmount();
+			Double newAmount = oldAmount - Double.valueOf(acc_amount);
+			Double newTotalAmount = oldTotalAmount - Double.valueOf(acc_amount);
+			financialAccount.setAccAmount(newAmount);
+			financialAccount.setAccTotalAmount(newTotalAmount);
+			financialAccountService.updateAccount(financialAccount);
+			return SUCCESS;
+		}
 	}
-	
-	public String searchfinancialaccount() throws Exception{
-		
-		financialAccount=financialAccountService.findFinancialAccountByNo(acc_no);
-		Client client=new Client();
-		client=clientService.getClientByNo(financialAccount.getIdcardNo());
-		FinancialAccountVO temp=new FinancialAccountVO();
-		temp.setAccNo(financialAccount.getAccNo());
-		temp.setAccTotalAmount(financialAccount.getAccTotalAmount());
-		temp.setClientName(client.getClientName());
-		temp.setCreatedDate(financialAccount.getCreateDate());
-		temp.setIdCardNo(financialAccount.getIdcardNo());
-		if(financialAccount.getAccStatus().equals("A"))
-		{
-			temp.setStatus("正常");
+
+	public String searchfinancialaccount() throws Exception {
+
+		financialAccount = financialAccountService
+				.findFinancialAccountByNo(acc_no);
+		if (financialAccount == null) {
+			return "error";
+		} else {
+			Client client = new Client();
+			client = clientService
+					.getClientByNo(financialAccount.getIdcardNo());
+			FinancialAccountVO temp = new FinancialAccountVO();
+			temp.setAccNo(financialAccount.getAccNo());
+			temp.setAccTotalAmount(financialAccount.getAccTotalAmount());
+			temp.setClientName(client.getClientName());
+			temp.setCreatedDate(financialAccount.getCreateDate());
+			temp.setIdCardNo(financialAccount.getIdcardNo());
+			if (financialAccount.getAccStatus().equals("A")) {
+				temp.setStatus("正常");
+			} else {
+				temp.setStatus("冻结");
+			}
+			financialAccountVO = temp;
+			return SUCCESS;
 		}
-		else {
-			temp.setStatus("冻结");
-		}
-		financialAccountVO=temp;
-		return SUCCESS;		
 	}
 }

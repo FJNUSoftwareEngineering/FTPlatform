@@ -31,7 +31,8 @@
 				<h3 class="clearfix">资金帐户号码:</h3>
 				<input type="text" class="form-control"
 					style="float: left;margin-top: 5px;width: 65%" name=acc_no
-					placeholder="Capital account number" required>
+					placeholder="Capital account number" required pattern="^\d+$"
+							title="请输入正确的资金账户格式">
 				<button class="btn btn-mid btn-primary"
 					style="margin-top: 5px;font-size: 13" type="submit">查 询</button>
 

@@ -32,10 +32,11 @@
 				<input type="text" class="form-control"
 					style="float: left;margin-top: 5px;width: 65%" name="accNo"
 					placeholder="Capital account number" required pattern="^\d+$"
-							title="请输入正确的资金账户格式">
+					title="请输入正确的资金账户格式">
+				
 				<button class="btn btn-mid btn-primary"
 					style="margin-top: 5px;font-size: 13" type="submit">查 询</button>
-
+<h4 style="color: red;">资金账户不存在，请重新搜索</h4>
 			</div>
 		</form>
 	</div>
@@ -95,15 +96,20 @@
 				</tr>
 			</thead>
 			<tbody>
-             <s:iterator value="personalHoldingVO_list">
-				<tr class="success">
-					<td style="font-size: 5px"><s:property value="fundNo" /></td>
-					<td style="font-size: 5px"><s:property value="fundName" /></td>
-					<td style="font-size: 5px"><s:property value="amount" /></td>
-					<td style="font-size: 5px"><s:property value="price" /></td>
-					<td style="font-size: 5px"><s:property value="price" /></td>
-				</tr>
-               </s:iterator>
+				<s:iterator value="personalHoldingVO_list">
+					<tr class="success">
+						<td style="font-size: 5px"><s:property value="fundNo" />
+						</td>
+						<td style="font-size: 5px"><s:property value="fundName" />
+						</td>
+						<td style="font-size: 5px"><s:property value="amount" />
+						</td>
+						<td style="font-size: 5px"><s:property value="price" />
+						</td>
+						<td style="font-size: 5px"><s:property value="price" />
+						</td>
+					</tr>
+				</s:iterator>
 			</tbody>
 		</table>
 	</div>

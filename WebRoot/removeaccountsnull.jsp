@@ -25,31 +25,31 @@
 <body>
 	<hr style="margin-top: 0px;">
 	<div class="jumbotron">
-		<form action="add_financialamount_result">
+		<form action="deduct_financialamount_result">
 			<div class="clearfix">
 				<div class="clientcard" style="width: 40%; float: left;">
 					<h3 class="right small clearfix">资金账户号码:</h3>
 				</div>
 				<div class="clientcard" style="width: 40%;float: left;">
 					<input type="text" class="form-control right top"
-						style="width: 80%" name="acc_no" placeholder="account no" required pattern="^\d+$"
-							title="请输入正确的资金账户格式">
+						style="width: 80%" name="acc_no" placeholder="account no" required
+						pattern="^\d+$" title="请输入正确的资金账户格式">
+					<h4 style="color: red;">资金账户不错在或冻结，请重新输入</h4>
 				</div>
 			</div>
 			<div class="clearfix">
 				<div class="clientcard" style="width: 40%; float: left;">
-					<h3 class="right small clearfix">追加金额:</h3>
+					<h3 class="right small clearfix">取出金额:</h3>
 				</div>
 				<div class="clientcard" style="width: 40%;float: left;">
 					<input type="text" class="form-control right top"
 						style="width: 80%" name="acc_amount" placeholder="account amount"
-						required pattern="^\d{1,10}(\.\d{1,2})?$" title="价格正确格式：0.39或1.00">
+						required pattern="^\d{1,10}(\.\d{1,2})?$" title="正确格式：0.39或1.00">
 				</div>
 			</div>
 			<button class="btn btn-mid btn-danger top-max "
-				style="margin-left: 365px" type="submit">追 加</button>
+				style="margin-left: 365px" type="submit">取 出</button>
 		</form>
 	</div>
-
 </body>
 </html>

@@ -62,17 +62,23 @@
 	<package name="FinancialAccountMgr" extends="struts-default">
 		<action name="add_financialaccount_result" class="com.ftplatform.action.FinancialAccountAction"
 			method="addfinancialaccount">
+
 		</action>
 		<action name="add_financialamount_result" class="com.ftplatform.action.FinancialAccountAction"
 			method="addfinancialamount">
+			<result name="success" type="redirectAction">load_clients</result>
+			<result name="error">additionalaccountsnull.jsp</result>
 		</action>
 		<action name="deduct_financialamount_result" class="com.ftplatform.action.FinancialAccountAction"
 			method="deductfinancialamount">
+					<result name="success" type="redirectAction">load_clients</result>
+			<result name="error">removeaccountsnull.jsp</result>
 		</action>
 
 		<action name="search_financial_account" class="com.ftplatform.action.FinancialAccountAction"
 			method="searchfinancialaccount">
 			<result name="success">fundaccountsearch.jsp</result>
+			<result name="error">fundaccountsearchnull.jsp</result>
 		</action>
 
 	</package>
@@ -94,6 +100,7 @@
 		<action name="search_holding" class="com.ftplatform.action.HoldingtradAction"
 			method="searchholding">
 			<result name="personalHoldingVO_list">holdings.jsp</result>
+			<result name="error">holdingsnull.jsp</result>
 		</action>
 	</package>
 

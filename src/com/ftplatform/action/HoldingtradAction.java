@@ -160,6 +160,10 @@ public class HoldingtradAction extends ActionSupport {
 		financialAccount = new FinancialAccount();
 		financialAccount = financialAccountService
 				.findFinancialAccountByNo(accNo);
+		if(financialAccount==null)
+		{
+		   return "error";
+		}else{
 		if (financialAccount.getAccStatus().equals("A")) {
 			financialAccount.setAccStatus("正常");
 		} else {
@@ -180,5 +184,6 @@ public class HoldingtradAction extends ActionSupport {
 		}
 		personalHoldingVO_list=temp_list;
 		return "personalHoldingVO_list";
+		}
 	}
 }

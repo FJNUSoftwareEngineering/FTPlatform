@@ -49,7 +49,8 @@
 					<div class="clientphone" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
 							style="width: 80%" name="acc_amount" placeholder="Type fund"
-							required>
+							required pattern="^\d{1,10}(\.\d{1,2})?$"
+							title="价格正确格式：0.39或1.00">
 					</div>
 
 				</div>

@@ -26,16 +26,16 @@
 	<hr style="margin-top: 0px;">
 
 	<div class="clearfix">
-		<form action="search_holding">
+		<form action="search_financial_account">
 			<div class="clientcard" style="width: 40%;float: left;">
 				<h3 class="clearfix">资金帐户号码:</h3>
 				<input type="text" class="form-control"
-					style="float: left;margin-top: 5px;width: 65%" name="accNo"
+					style="float: left;margin-top: 5px;width: 65%" name=acc_no
 					placeholder="Capital account number" required pattern="^\d+$"
 							title="请输入正确的资金账户格式">
 				<button class="btn btn-mid btn-primary"
 					style="margin-top: 5px;font-size: 13" type="submit">查 询</button>
-
+                <h4 style="color: red;">资金账户不存在，请重新搜索</h4>
 			</div>
 		</form>
 	</div>
@@ -47,18 +47,18 @@
 			</div>
 			<div class="clientcard" style="width: 40%;float: left;">
 				<s:textfield Class="form-control right top" style="width: 80%"
-					placeholder="Type ID card No" readonly="true"
-					name="financialAccount.idcardNo"></s:textfield>
+					placeholder="Capital account number" readonly="true"
+					name="financialAccountVO.accNo"></s:textfield>
 			</div>
 		</div>
 		<div class="clearfix">
 			<div class="clientcard" style="width: 40%; float: left;">
-				<h3 class="right small clearfix">资金账号:</h3>
+				<h3 class="right small clearfix">资金:</h3>
 			</div>
 			<div class="clientcard" style="width: 40%;float: left;">
 				<s:textfield Class="form-control right top" style="width: 80%"
-					placeholder="Type acc No" readonly="true"
-					name="financialAccount.accNo"></s:textfield>
+					placeholder="Capital amount" readonly="true"
+					name="financialAccountVO.accTotalAmount"></s:textfield>
 			</div>
 		</div>
 		<div class="clearfix">
@@ -67,8 +67,34 @@
 			</div>
 			<div class="clientname" style="width: 40%;float: left;">
 				<s:textfield Class="form-control right top" style="width: 80%"
-					placeholder="create time" readonly="true"
-					name="financialAccount.createDate"></s:textfield>
+					placeholder="Capital create date" readonly="true"
+					name="financialAccountVO.createdDate"></s:textfield>
+			</div>
+
+		</div>
+
+		<div class="clearfix">
+			<div class="clientadress" style="width: 40%; float: left;">
+				<h3 class="right small clearfix">客户代码:</h3>
+			</div>
+			<div class="clientname" style="width: 40%;float: left;">
+				<s:textfield Class="form-control right top" style="width: 80%"
+					placeholder="Capital ID Card No" readonly="true"
+					name="financialAccountVO.idCardNo"></s:textfield>
+
+			</div>
+
+
+		</div>
+		<div class="clearfix">
+			<div class="clientname" style="width: 40%; float: left;">
+				<h3 class="right small clearfix">客户名称:</h3>
+			</div>
+			<div class="clientname" style="width: 40%;float: left;">
+				<s:textfield Class="form-control right top" style="width: 80%"
+					placeholder="Capital name" readonly="true"
+					name="financialAccountVO.clientName"></s:textfield>
+
 			</div>
 
 		</div>
@@ -78,35 +104,15 @@
 			</div>
 			<div class="clientname" style="width: 40%;float: left;">
 				<s:textfield Class="form-control right top" style="width: 80%"
-					placeholder="acc status" readonly="true"
-					name="financialAccount.accStatus"></s:textfield>
+					placeholder="Capital state" readonly="true"
+					name="financialAccountVO.status"></s:textfield>
+
+			</div>
+			<div class="clientname" style="width: 40%;float: left;">
+				<button class="btn btn-mid btn-danger top-max "
+					style="margin-left: 365px" type="submit">冻结账户</button>
 			</div>
 		</div>
 	</div>
-	<div class="table-responsive">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>基金编号</th>
-					<th>基金名称</th>
-					<th>持有份额</th>
-					<th>基金购买单价</th>
-					<th>基金当前价格</th>
-				</tr>
-			</thead>
-			<tbody>
-             <s:iterator value="personalHoldingVO_list">
-				<tr class="success">
-					<td style="font-size: 5px"><s:property value="fundNo" /></td>
-					<td style="font-size: 5px"><s:property value="fundName" /></td>
-					<td style="font-size: 5px"><s:property value="amount" /></td>
-					<td style="font-size: 5px"><s:property value="price" /></td>
-					<td style="font-size: 5px"><s:property value="price" /></td>
-				</tr>
-               </s:iterator>
-			</tbody>
-		</table>
-	</div>
-
 </body>
 </html>
