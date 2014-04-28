@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Error Page</title>
+        <title>Success</title>
     </head>
     <body>
-      <h1>没有账户信息</h1>
+      <h1>开户成功</h1>
       <p>
-                    暂无该用户的账户信息，请先进行开户操作。
+                    账户状态正常，您可以进行正常的基金买卖交易
       </p>
 
     </body>

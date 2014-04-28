@@ -81,7 +81,7 @@
 					<div class="amount" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top" style="width: 80%"
 							name="fundHolding.amount" placeholder="0" required pattern="^\d+$"
-							title="请输入正确的资金账户格式" >
+							title="请输入正确的格式" >
 
 					</div>
 
@@ -94,6 +94,7 @@
 						<input type="text" class="form-control right top"
 							style="width: 80%" name="financialAccount.accPwd" placeholder="Type pwd"
 							required>
+						 <h4 style="color: red; padding-left: 15px">密码不正确</h4>	
 					</div>
 
 				</div>

@@ -31,79 +31,63 @@
 
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="jumbotron">
-			<form action="add_holding">
+			<form action="back_fund_result">
 				<div class="clearfix">
-					<div class="fundNo" style="width: 40%; float: left;">
+					<div class="clientcard" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">基金编号:</h3>
 					</div>
-					<div class="fundNo" style="width: 40%;float: left;">
-						<s:textfield Class="form-control right top" style="width: 80%"
-							readonly="true" name="fund.fundNo"  pattern="^\d+$"
-							title="请输入正确的资金账户格式"></s:textfield>
+					<div class="clientcard" style="width: 40%;float: left;">
+						<input type="text" class="form-control right top"
+							style="width: 80%" name="fund.fundNo" placeholder="Type fund No"
+							required pattern="^\d+$"
+							title="请输入正确的基金编号格式">
+							
 					</div>
 				</div>
 				<div class="clearfix">
-					<div class="fundname" style="width: 40%; float: left;">
-						<h3 class="right small clearfix">产品名称:</h3>
-					</div>
-					<div class="fundname" style="width: 40%;float: left;">
-						<s:textfield Class="form-control right top" style="width: 80%"
-							readonly="true" name="fund.fundName"></s:textfield>
-					</div>
-
-				</div>
-				<div class="clearfix">
-					<div class="price" style="width: 40%; float: left;">
-						<h3 class="right small clearfix">基金价格:</h3>
-					</div>
-					<div class="price" style="width: 40%;float: left;">
-						<s:textfield Class="form-control right top" style="width: 80%"
-							readonly="true" name="fund.price"></s:textfield>
-					</div>
-				</div>
-				<div class="clearfix">
-					<div class="fundaccountno" style="width: 40%; float: left;">
+					<div class="clientadress" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">资金账户:</h3>
 					</div>
-					<div class="fundaccountno" style="width: 40%;float: left;">
+					<div class="clientemail" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
-							style="width: 80%" name="financialAccount.accNo" placeholder="Type account no"
-							required pattern="^\d+$"
+							style="width: 80%" name="financialAccount.accNo" placeholder="Type account No" required
+							pattern="^\d+$"
 							title="请输入正确的资金账户格式">
+						 <h4 style="color: red; padding-left: 15px">基金不存在或资金账户有误</h4>	
 					</div>
 
 
 				</div>
 				<div class="clearfix">
-					<div class="amount" style="width: 40%; float: left;">
-						<h3 class="right small clearfix">够买数量:</h3>
+					<div class="clientphone" style="width: 40%; float: left;">
+						<h3 class="right small clearfix">赎回数量:</h3>
 					</div>
-					<div class="amount" style="width: 40%;float: left;">
-						<input type="text" class="form-control right top" style="width: 80%"
-							name="fundHolding.amount" placeholder="0" required pattern="^\d+$"
-							title="请输入正确的资金账户格式" >
+					<div class="clientphone" style="width: 40%;float: left;">
+						<input onkeypress=onlyNum() class="form-control right top"
+							style="width: 80%" name="fundHolding.amount" placeholder="0" required pattern="^\d+$"
+							title="请输入正确的格式">
 
 					</div>
 
 				</div>
 				<div class="clearfix">
-					<div class="fundaccountpwd" style="width: 40%; float: left;">
+					<div class="clientemail" style="width: 40%; float: left;">
 						<h3 class="right small clearfix">资金账户密码:</h3>
 					</div>
-					<div class="fundaccountpwd" style="width: 40%;float: left;">
+					<div class="clientemail" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
-							style="width: 80%" name="financialAccount.accPwd" placeholder="Type pwd"
-							required>
+							style="width: 80%" name="financialAccount.accPwd" placeholder="Type pwd" required>
+
 					</div>
 
 				</div>
 				<button class="btn btn-mid btn-primary top-max "
-					style="margin-left: 327px" type="submit">够买</button>
+					style="margin-left: 327px" type="submit">赎回</button>
 				<a class="btn btn-mid btn-success top-max" href="" role="button">取消
 				</a>
-
 			</form>
 		</div>
+
 
 	</div>
 

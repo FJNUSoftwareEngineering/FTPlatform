@@ -126,6 +126,17 @@ public class FinancialAccountAction extends ActionSupport {
 	public String addfinancialaccount() throws Exception {
 		FinancialAccount financialAccount = new FinancialAccount();
 		// financialAccount.setAccNo(100000+financialAccountService.total());
+		Client client=new Client();
+//		ClientService clientService=new 
+		client=clientService.getClientByNo(idcard_no);
+		if(client==null)
+		{
+			return "noclienterr";
+		}
+		else if(!acc_pwd.equals(acc_pwd_check)){
+			return "pwderr";
+		}
+		else{
 		financialAccount.setAccPwd(acc_pwd);
 		financialAccount.setAccStatus("A");
 		financialAccount.setIdcardNo(idcard_no);
@@ -137,8 +148,8 @@ public class FinancialAccountAction extends ActionSupport {
 		created_date = createdate;
 		financialAccount.setCreateDate(created_date);
 		financialAccountService.createFinancialAccount(financialAccount);
-		return null;
-
+		return "success";
+		}
 	}
 
 	public String addfinancialamount() throws Exception {

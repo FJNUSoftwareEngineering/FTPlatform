@@ -187,6 +187,13 @@ public class ClientInfoAction extends ActionSupport {
 		client = clientService.getClientByNo(client.getIdCardNo());
 		financialAccount = financialAccountService
 				.findFinancialAccountById(client.getIdCardNo());
+		System.out.println(client.getIdCardNo());
+		if(financialAccount==null)
+		{
+			System.out.println("-=============");
+			return "error";
+		}
+		else{
 		if (financialAccount.getAccStatus().equals("A")) {
 			financialAccount.setAccStatus("正常");  
 		}
@@ -196,8 +203,7 @@ public class ClientInfoAction extends ActionSupport {
 		}
 		
 		list_client_financial=clientService.loadclientfinancial(client.getIdCardNo());
-		System.out.println(list_client_financial.size());
 		return "list_client_financial";
-
+		}
 	}
 }

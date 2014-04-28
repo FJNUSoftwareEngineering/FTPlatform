@@ -41,7 +41,10 @@ public class ClientDaoImpl implements ClientDao {
 				+ idCardNo + "");
 		List<Client> list = query.list();
 		session.close();
-		return list.get(0);
+		if (list.size() > 0)
+			return list.get(0);
+		else
+			return null;
 	}
 
 	@Override
