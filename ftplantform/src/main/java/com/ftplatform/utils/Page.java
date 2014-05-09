@@ -1,11 +1,11 @@
-package com.ftplantform.utils;
+package com.ftplatform.utils;
 
 import java.util.List;
 
 public class Page {
 	private int pagesize;//每页显示个数
-	private int curpage;//当前�?
-	private int pagecount;//总页�?
+	private int curpage;//当前�?
+	private int pagecount;//总页�?
 	private int sumcount;//总记录数
 	private List result;
 
