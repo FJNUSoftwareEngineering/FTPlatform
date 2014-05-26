@@ -3,7 +3,7 @@ package com.ftplatform.dao;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Projections;
 
-import com.ftplatform.utils.Page;
+import com.ftplantform.utils.Page;
 
 
 public class DaoSupport {
@@ -15,7 +15,7 @@ public class DaoSupport {
 		int pagenum=count/page.getPagesize();
 		if(count%page.getPagesize()!=0)
 			pagenum+=1;
-		page.setPagecount(pagenum);//总页�?
+		page.setPagecount(pagenum);//总页�?
 		int startNo=(page.getCurpage()-1)*page.getPagesize();
 		int endNo=startNo+page.getPagesize();
 
