@@ -38,8 +38,7 @@
 					</div>
 					<div class="fundNo" style="width: 40%;float: left;">
 						<s:textfield Class="form-control right top" style="width: 80%"
-							readonly="true" name="fund.fundNo"  pattern="^\d+$"
-							title="请输入正确的资金账户格式"></s:textfield>
+							readonly="true" name="fund.fundNo"></s:textfield>
 					</div>
 				</div>
 				<div class="clearfix">
@@ -68,8 +67,7 @@
 					<div class="fundaccountno" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
 							style="width: 80%" name="financialAccount.accNo" placeholder="Type account no"
-							required pattern="^\d+$"
-							title="请输入正确的资金账户格式">
+							required>
 					</div>
 
 
@@ -80,8 +78,7 @@
 					</div>
 					<div class="amount" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top" style="width: 80%"
-							name="fundHolding.amount" placeholder="0" required pattern="^\d+$"
-							title="请输入正确的资金账户格式" >
+							name="fundHolding.amount" placeholder="0" required>
 
 					</div>
 

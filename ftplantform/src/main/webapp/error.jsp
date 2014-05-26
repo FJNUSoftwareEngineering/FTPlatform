@@ -5,10 +5,13 @@
         <title>Error Page</title>
     </head>
     <body>
-      <h1>没有账户信息</h1>
+      <h1>An Error Has Occurred</h1>
       <p>
-                    暂无该用户的账户信息，请先进行开户操作。
+        Sorry, but things didn't work out as planned. As much information about
+        the problem has been logged for the administrator.
       </p>
-
+      <p>
+        If the problem continues please contact the administrator.
+      </p>
     </body>
 </html>

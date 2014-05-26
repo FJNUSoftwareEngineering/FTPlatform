@@ -39,8 +39,7 @@
 					<div class="clientcard" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
 							style="width: 80%" name="fund.fundNo" placeholder="Type fund No"
-							required pattern="^\d+$"
-							title="请输入正确的基金编号格式">
+							required>
 					</div>
 				</div>
 				<div class="clearfix">
@@ -49,9 +48,7 @@
 					</div>
 					<div class="clientemail" style="width: 40%;float: left;">
 						<input type="text" class="form-control right top"
-							style="width: 80%" name="financialAccount.accNo" placeholder="Type account No" required
-							pattern="^\d+$"
-							title="请输入正确的资金账户格式">
+							style="width: 80%" name="financialAccount.accNo" placeholder="Type account No" required>
 					</div>
 
 
@@ -62,8 +59,7 @@
 					</div>
 					<div class="clientphone" style="width: 40%;float: left;">
 						<input onkeypress=onlyNum() class="form-control right top"
-							style="width: 80%" name="fundHolding.amount" placeholder="0" required pattern="^\d+$"
-							title="请输入正确的资金账户格式">
+							style="width: 80%" name="fundHolding.amount" placeholder="0" required>
 
 					</div>
 

@@ -129,14 +129,9 @@ public class HoldingAction extends ActionSupport {
 		fundNo = fund.getFundNo();
 		temp_relust = fundHoldingService.fundHoldbyAccNo(financialAccount
 				.getAccNo(),fundNo);
-		String pwd =financialAccount.getAccPwd();
 		financialAccount=financialAccountService.findFinancialAccountByNo(financialAccount
 				.getAccNo());
-		if(!financialAccount.getAccPwd().equals(pwd))
-		{
-			return "pwderror";
-		}
-		else{
+		
 		accNo = financialAccount.getAccNo();
 	
 		if (temp_relust == null) {
@@ -170,7 +165,7 @@ public class HoldingAction extends ActionSupport {
 		fundTransinfoService.createFundTransinfo(fundTransinfo);
 
 		return "buylist";
-		}
+
 	}
 
 	public String backholding() throws Exception {
@@ -179,18 +174,8 @@ public class HoldingAction extends ActionSupport {
 		fundNo = fund.getFundNo();
 		temp_relust = fundHoldingService.fundHoldbyAccNo(financialAccount
 				.getAccNo(),fundNo);
-		String pwd =financialAccount.getAccPwd();
 		financialAccount=financialAccountService.findFinancialAccountByNo(financialAccount
 				.getAccNo());
-		if(temp_relust==null)
-		{
-			return "error";
-		}
-		else if(!financialAccount.getAccPwd().equals(pwd))
-		{
-			return "pwderror";
-		}
-		else{
 		Fund temp = fundService.findFundByNo(fundNo);
 		if (temp_relust == null) {
 
@@ -224,6 +209,6 @@ public class HoldingAction extends ActionSupport {
 			}
 		}
 		return SUCCESS;
-		}
+
 	}
 }
